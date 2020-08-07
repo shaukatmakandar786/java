@@ -4,13 +4,6 @@ write a java program to create an applet which contains a list of cources.Displa
 the selected cource in a text box.
 */
 
-
-
-
-
-
-
-
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -49,30 +42,3 @@ public class Cource extends Applet implements ItemListener
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
