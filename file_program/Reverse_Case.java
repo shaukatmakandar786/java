@@ -3,7 +3,7 @@
 
 /*
 import java.io.*;
-class Reverse_File
+class Reverse_case
 {
 	public static void main(String[] args)
 	{
