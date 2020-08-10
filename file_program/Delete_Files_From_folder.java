@@ -45,4 +45,4 @@ class Delete_Files_From_folder
 		}
 	}
 }
-*/
+
