@@ -1,0 +1,43 @@
+
+
+how to clone a repo:-  git clone [repo address]
+
+how to check current branch:git branch
+
+how to move to another branch git:
+
+	$ git checkout <existing_branch>
+
+	$ git checkout -b <new_branch>
+
+how to commit code from local machine to github:
+
+	1) F:\shaukat\ws\ezir-cloud\g-apis\v1\github-apis
+	2) git add filename.py
+	3) git commit -m "msg"
+	4) git push -u origin [branch name]
+	how to push from one branch to another branch:
+		5)  git push -u origin <current branch name>:<destination branch name>
+		
+
+
+
+how to create virtual env:
+
+	virtualenv venv2
+
+how to create wheel file:
+
+	python setup.py sdist bdist_wheel
+
+how to install whell file:
+
+	
+(venv2) PS F:\shaukat\ws\ezir-cloud\g-apis\v1\github-apis\githubapis\dist> pip install .\githubapis-0.0.3-py3-none-any.w
+hl	
+
+
+
+how to clone a repo:-  git clone [repo address]
+
+
