@@ -34,7 +34,7 @@ Programming statement
 eg: @Override, @WebListener
 
 - single-Valued Annotation:
-eg: @SuppressWarning("uncheck")
+eg: @SuppressWarning("unchecked")
 
 - Multi-Valued Annotation
 eg: @Webservlet(name="myservlet",urlPattern={"/abc","/xyz"})
