@@ -53,6 +53,7 @@ eg: @Webservlet(name="myservlet",urlPattern={"/abc","/xyz"})
     2. @SuppressWarning
     3. @Depricated
     4. @FunctionalInterface  
+    5. all above annotations are present in (java.lang) package  
      
   
     - Meta Annotation:
@@ -60,6 +61,11 @@ eg: @Webservlet(name="myservlet",urlPattern={"/abc","/xyz"})
     2. @Inherited
     3. @Target
     4. @Retention
+    5. all above annotations are present in (java.lang.annotation) package  
+
+## Note:
+
+For all annotation's super interface is java.lang.annotation.Annotation
         
 
 
