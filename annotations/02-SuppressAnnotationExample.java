@@ -1,3 +1,6 @@
+//@SuppressWarnings:
+//@SuppressWarnings annotation: is used to suppress warnings issued by the compiler.
+
 package com.company;
 import java.util.*;
 class Bank
