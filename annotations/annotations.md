@@ -174,7 +174,7 @@ Syntax:
 
 Example  
 
-@Retention(RetentionPolicy.SOURCE)  
+@Retention(RetentionPolicy.SOURCE)    
 @Retention(RetentionPolicy.CLASS) 
 @Retention(RetentionPolicy.RUNTIME)  
 
