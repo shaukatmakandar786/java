@@ -139,7 +139,8 @@ class Employye
 }  
 
 
-## @Target
+## @Target:
+
 @Target tag is used to specify at which type, the annotation is used.
 
 The java.lang.annotation.ElementType enum declares many constants to specify the type of element  
@@ -163,6 +164,19 @@ Example:
     ------;  
 }  
 
+## @Retention:
+
+@Retention annotation is used to specify to what level annotation will be available.
+
+Syntax:  
+
+@Retention(RetentionPolicy.value)  
+
+Example  
+
+@Retention(RetentionPolicy.SOURCE)  
+@Retention(RetentionPolicy.CLASS) 
+@Retention(RetentionPolicy.RUNTIME)  
 
 
 
