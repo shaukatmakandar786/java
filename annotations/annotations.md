@@ -67,6 +67,105 @@ eg: @Webservlet(name="myservlet",urlPattern={"/abc","/xyz"})
 
 For all annotation's super interface is java.lang.annotation.Annotation
         
+## Meta Annotation:
+
+Annotation about Annotation is called meta annotation.
+That means declaring an annotation using another annotation.
+Java provided all annotation in (java.lang.annotation.Annotation) package.
+
+1. @Inherited
+2. @Documented
+3. @Target
+4. @Retention
+
+## @Inherited:
+By default, annotations are not inherited to subclasses. 
+The @Inherited annotation marks the annotation to be inherited to subclasses.  
+
+### Example:
+
+@Inherited  
+@interface Persistable  
+{  
+    ----;  
+    ----;   
+}  
+
+@Persistable  
+class Employye  
+{  
+  int eid;  
+  String name;  
+}  
+class Manager extends Employee  
+{  
+  void getManagerDetails()  
+  {  
+    sop(eid);  
+    sop(name);  
+  }  
+  
+}  
+
+## @Documented:
+
+The @Documented Marks the annotation for inclusion in the documentation.  
+Means if we used @Documented Annotaion so all annotation also display in documentation of HTML.
+
+### Example:
+D:\app\Employee.java
+d:\app>javadoc Employee
+
+@Documented  
+@interface Persistable  
+{  
+    ----;  
+    ----;   
+}  
+
+@Persistable  
+class Employye  
+{  
+  int eid;  
+  String name; 
+  
+  public Employee(int eid,String name)  
+  {  
+  }  
+  public void add()  
+  {  
+  }  
+  
+}  
+
+
+## @Target
+@Target tag is used to specify at which type, the annotation is used.
+
+The java.lang.annotation.ElementType enum declares many constants to specify the type of element  
+where annotation is to be applied such as TYPE, METHOD, FIELD etc.
+  
+Syntax: 
+
+@Target(ElementType.value)  
+
+Example:  
+
+@Target(ElementType.TYPE)-> class, interface or enumeration  
+@Target(ElementType.FIELD)-> variables  
+@Target(ElementType.METHOD)-> methods  
+@Target(ElementType.CONSTRUCTOR)-> constructors  
+
+@Target(ElementType.TYPE,ElementType.FIELD)  
+@interface Persistable  
+{  
+    ------;  
+    ------;  
+}  
+
+
+
+
 
 
 
