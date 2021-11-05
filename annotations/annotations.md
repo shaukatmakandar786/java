@@ -178,7 +178,13 @@ Example
 @Retention(RetentionPolicy.CLASS) 
 @Retention(RetentionPolicy.RUNTIME)  
 
+## Custom Annotation:
 
+1. define user define annotation
+2. utilize user define annotation
+3. access data from user define annotation
+
+Note: see above concepts example in Custom Annotation folder
 
 
 
