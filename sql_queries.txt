@@ -1,0 +1,136 @@
+Q1 find third highest salary from eployee
+
+ans:- select distinct(salary) from employee order by salary desc limit 2,1;//(limit n-1,1)
+
+-------------------------------------------------------------------------------------------
+Q2) display department wise max salary and department name?
+
+ans:- select d1.dname,max(salary) from employee e1 join department d1 on d1.dno=e1.dno group by d1.dname;
+
+------------------------------------------------------------------------------------------------------------------
+Q3) 
+
+ans:- select * from employee where age>18;
+
+---------------------------------------------------------------------------------------------------------
+Q4)
+
+ans:-select max(salary) from employee having age>=18
+
+------------------------------------------------------------------------------------------------------------
+Q5)
+
+ans:- select * from customer;
+      union
+      select * from suppliers;
+    
+----------------------------------------------------------------------------------------      
+ Q6) IN/Exists:
+ 
+ -IN basically like multipe OR
+ 
+ ans1:- select * from  customer where city='pune' OR city='nasik' OR city='Dehli';
+ 
+ 					OR
+ 				
+ans2.1:- select * from customer where city IN ('pune','nasik','Dehli');
+
+ans2.2:- select * from customer where city IN (select * from employee);
+
+---------------------------------------------------------------------------------------------------------
+Q7) order by/group by:
+
+order by:
+----------
+
+ans:- select * from employee order by id desc;
+
+
+group by:
+----------
+
+ans:- select isActive,count(*) from customer group by isActive;
+
+-------------------------------------------------------------------------------------------------
+Q8) how to find duplcate row from a table?
+
+ans1:- select email,count(*) as duplicate from employee group by email having duplicate > 1;
+
+ans2:- select email,dept,count(*) as duplicate from employee group by email,dept having duplicate > 1;
+
+-----------------------------------------------------------------------------------------------------------------------
+Q9) how to delete duplcate row from a table?
+		 
+ans:- delete from employee where email IN(select email from (select email,count(*) as duplicate from employee group by email having duplicate > 1)as temp);    
+
+
+ans:- delete e1 from employee e1,employee e2 where e1.email=e2.email and e1.id>e2.id; 		
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Q10)
+
+ans:- select * from student where name like '_k%';
+
+-----------------------------------------------------------
+Q11)
+
+ans:- update employee set income=income+(income*5.0/100.0);
+
+Q12)
+
+ans:-select * from employee where ename like 'A%';
+
+------------------------------------------------------------
+Q13):- 
+
+ans:- select count(*) from employee where dept='abc';
+
+-----------------------------------------------------------------------
+q14)
+
+ans:- select * from employee where fname like '-----A';
+
+---------------------------------------------------------------------------------
+Q15)
+
+
+select * from employee where salary BETWEEN 10000 AND 50000;
+
+-------------------------------------------------------------------------------------
+Q16) even and odd?
+
+ans1:- select * from employee where MOD(eid,2)=0;
+
+ans2:- select * from employee where MOD(eid,2)=1;
+
+------------------------------------------------------------------------------
+Q17) 
+
+ans:- select * from employee where eid=(select min(eid) from employee);
+
+ans:- select * from employee where eid=(select max(eid) from employee);
+
+---------------------------------------------------------------------------------------------------------------------------
+Q18) copy all row of a table using sql?
+
+ans:- create table copy_emp as select * from employee;
+
+ans :- create table copy_emp as select from employee where 1=2;
+
+---------------------------------------------------------------
+Q19) display last 3 records?
+
+ans:- select * from employee(select * from employee order by eid desc limit 3) as temp order by eid asc;
+
+--------------------------------------------------------------------------------------------------------------------------------
+Q20)
+
+Using join:
+-----------
+ans:-select d1.dname,count(*) from employee e1 join department d1 on d1.dno=e1.dno group by d1.dname;
+
+Without join:
+---------------
+ans:- select d1.dname,count(*) from employee e1, dept d1
+	where e1.dno=d1.dno group by e1.dno;
+
+---------------------------------------------------------------------------------------------------------------------------------
