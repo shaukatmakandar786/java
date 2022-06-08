@@ -35,3 +35,11 @@ public class RemoveDuplicateInArray {
 
     }
 }
+
+// 2
+// 5
+// 9
+// 1
+// 6
+// 3
+// 4
