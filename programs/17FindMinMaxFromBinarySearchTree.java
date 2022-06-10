@@ -69,7 +69,7 @@ public class BinaryTree {
     public static void main(String[] args) {
 
         BinaryTree tree=new BinaryTree();
-        tMaximum elements is 54ree.root=new Node(10);
+        tree.root=new Node(10);
         tree.root.left=new Node(1);
         tree.root.right=new Node(50);
         tree.root.left.left=new Node(8);
@@ -82,6 +82,3 @@ public class BinaryTree {
         System.out.println("Minimum elements is "+findMin(tree.root));
     }
 }
-
-// Maximum elements is 54
-// Minimum elements is 1
