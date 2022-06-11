@@ -70,3 +70,31 @@ Methods:
 
  It will remove last element from LinkedList.  
  
+     import java.util.*; 
+     class Test 
+     { 
+        public static void main(String[] args) 
+        { 
+            LinkedList ll=new LinkedList(); 
+            ll.add("A"); 
+            ll.add("B"); 
+            ll.add("C"); 
+            ll.add("D"); 
+            ll.add("E"); 
+            System.out.println(ll); 
+            ll.addFirst("X"); 
+            ll.addLast("Y"); 
+            System.out.println(ll); 
+            ll.removeFirst(); 
+            ll.removeLast(); 
+            System.out.println(ll);
+            System.out.println(ll.getFirst()); 
+            System.out.println(ll.getLast()); 
+        } 
+     } 
+     
+     [A, B, C, D, E]
+     [X, A, B, C, D, E, Y]
+     [A, B, C, D, E]
+     A
+     E
