@@ -178,3 +178,157 @@ new_Capacity = (Current_Capacity*3/2)+1
         [A, B, C, D, E, B, 10]
         [A, B, C, D, E, B, 10, null, null]
         
+# Vector:   
+• It was introduced in JDK1.0 version.  
+• It is Legacy Collection.  
+• It is a direct implementation class to List interface.  
+• It is index based.  
+• It allows duplicate elements.  
+• It follows insertion order.  
+• It will not follow sorting order.  
+• It allows heterogeneous elements.  
+• It allows any number of null values.  
+• Its internal data structure is "Resizable Array".  
+• Its initial capacity is 10 elements.  
+• It is best choice for frequent retrieval operations.  
+• It is not good for frequent insertions and deletion operations.  
+• Its incremental capacity is double the current capacity.  
+New_capacity = 2*Current_Capacity  
+• It is synchronized elemenet.  
+• All the methods of vector class are synchronized.  
+• It allows only one thread at a time.  
+• It follows sequential execution.  
+• It will increase execution time.  
+• It will reduce application performance.  
+• It is giving guarantee for data consistency.  
+• It is threadsafe.  
+
+• public Vector()  
+
+ It can be used to create an empty Vector object with the initial capacity 10 elements. 
+ 
+ EX: Vector v = new Vector();  
+ System.out.println(v.capacity());  
+ OUTPUT: 10  
+ 
+• public Vector(int capacity)  
+ It can be used to create an empty vector object with the specified capacity value.  
+ 
+ EX: Vector v = new Vector(20);  
+ System.out.println(v.capacity());  
+ OUTPUT: 20  
+ 
+ • public Vector(int capacity, int incremental_Ratio)  
+ 
+This constructor can be used to create an empty Vector object with the specified initial  
+capacity and with the specified incremental ratio  
+
+      import java.util.*; 
+      class Test 
+      { 
+          public static void main(String[] args) 
+          { 
+              Vector v=new Vector(5,5); 
+              System.out.println(v.capacity()); 
+              for(int i=1;i<=6;i++) 
+              { 
+                   v.add(i); 
+              } 
+              System.out.println(v.capacity()); 
+              for(int i=7;i<=11;i++) 
+              { 
+                   v.add(i); 
+              } 
+              System.out.println(v.capacity()); 
+          } 
+      } 
+      
+      OUTPUT:
+      5
+      10
+      15
+
+• public Vector(Collection c)  
+
+ This constructor can be used to create Vector object with all the elements of the  
+ specified Collection object.  
+
+       import java.util.*; 
+       class Test 
+       { 
+          public static void main(String[] args) 
+          { 
+             Vector v=new Vector(); 
+             v.add("A"); 
+             v.add("B"); 
+             v.add("C"); 
+             v.add("D"); 
+             System.out.println(v); 
+             Vector v1=new Vector(v); 
+             System.out.println(v1); 
+          } 
+       } 
+       OUTPUT:
+       [A,B,C,D]
+       [A,B,C,D]
+       
+Methods:  
+• public void addElement(Object obj)  
+
+ It will add the specified element to Vector.  
+ 
+• public Object firstElement()  
+
+ It will return first element of the Vector.  
+ 
+• public Object lastElement()  
+
+ It will return last element of the Vector.  
+ 
+• public Object elementAt(int index)  
+
+ It will return an element available at the specified index.  
+ 
+• public void removeElement(Object obj)  
+
+It will remove the specified element from Vector.  
+
+• public void removeElementAt(int index)  
+
+ It will remove an element existed at the specified index value.  
+ 
+• public void removeAllElements()  
+
+ It will remove all elements from Vector.  
+ 
+      import java.util.*; 
+      class Test 
+      { 
+           public static void main(String[] args) 
+           { 
+                Vector v=new Vector(); 
+                v.addElement("A"); 
+                v.addElement("B"); 
+                v.addElement("C"); 
+                v.addElement("D"); 
+                v.addElement("E"); 
+                System.out.println(v); 
+                System.out.println(v.firstElement()); 
+                System.out.println(v.lastElement()); 
+                System.out.println(v.elementAt(3)); 
+                v.removeElement("D"); 
+                System.out.println(v); 
+                v.removeElementAt(2); 
+                System.out.println(v); 
+                v.removeAllElements(); 
+                System.out.println(v); 
+           }
+       }
+       
+       [A, B, C, D, E]
+       A
+       E
+       D
+       [A, B, C, E]
+       [A, B, E]
+       []
