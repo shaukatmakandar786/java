@@ -1,6 +1,5 @@
-Arrays:
--------
-Array:
+# Arrays:
+
 --> Array is an Object, it able to store more than one element of the same Data Type as per indexing, where index values will start from 0 to size-1 .
 
 --> In Java applications, we are able to utilize arrays in the following two ways.
@@ -66,82 +65,82 @@ they will return a string contains the following format.
 	--------
 EX:
 ---
-public class Test {
+	public class Test {
 
-	public static void main(String[] args) {
-		int[] a = {10,20,30,40,50};
-		System.out.println(a);
-		
-		float[] f = {11.11f, 22.22f, 33.33f, 44.44f, 55.55f};
-		System.out.println(f);
+		public static void main(String[] args) {
+			int[] a = {10,20,30,40,50};
+			System.out.println(a);
+
+			float[] f = {11.11f, 22.22f, 33.33f, 44.44f, 55.55f};
+			System.out.println(f);
+
+			}
 
 	}
-
-}
 
 --> In Java applications, to get length / size / no of elements of an array we have to use a predefined variable in the from of 'length'.
 EX:
 ----
 
-public class Test {
+	public class Test {
 
-	public static void main(String[] args) {
-		int[] a = {10,20,30,40,50};
-		System.out.println(a.length);
-		
-		float[] f = {11.11f, 22.22f, 33.33f, 44.44f, 55.55f, 66.66f};
-		System.out.println(f.length);
+		public static void main(String[] args) {
+			int[] a = {10,20,30,40,50};
+			System.out.println(a.length);
+
+			float[] f = {11.11f, 22.22f, 33.33f, 44.44f, 55.55f, 66.66f};
+			System.out.println(f.length);
+
+			}
 
 	}
-
-}
 
 --> In Java applications, if we want to read an element from an array then we have to use the following format.
      arrayRefVar[index]
 EX:
 ----
 
-public class Test {
+	public class Test {
 
-	public static void main(String[] args) {
-		int[] a = {10,20,30,40,50};
-		System.out.println(a[1]);//20
-		System.out.println(a[3]);//40
-		System.out.println(a[4]);//50
+		public static void main(String[] args) {
+			int[] a = {10,20,30,40,50};
+			System.out.println(a[1]);//20
+			System.out.println(a[3]);//40
+			System.out.println(a[4]);//50
+			}
+
 	}
-
-}
 --> While getting elements from an array on the basis of index values, if we provide an index value which is in out side range of the array indexes
  then JVM will raise an exception like "java.lang.ArrayIndexOutOfBoundsException"  
 
 EX:
 ----
-public class Test {
+	public class Test {
 
-	public static void main(String[] args) {
-		int[] a = {10,20,30,40,50};
-		System.out.println(a[1]);//20
-		System.out.println(a[3]);//40
-		System.out.println(a[4]);//50
-		System.out.println(a[10]);//ArrayIndexOutOfBoundsException
+		public static void main(String[] args) {
+			int[] a = {10,20,30,40,50};
+			System.out.println(a[1]);//20
+			System.out.println(a[3]);//40
+			System.out.println(a[4]);//50
+			System.out.println(a[10]);//ArrayIndexOutOfBoundsException
+		}
+
 	}
-
-}
 
 EX:
 ----
-public class Test {
+	public class Test {
 
-	public static void main(String[] args) {
-		int[] a = {10,20,30,40,50};
-		System.out.println(a[1]);
-		System.out.println(a[2]);
-		System.out.println(a[4]);
-		System.out.println(a[a.length-2]);//a[5-2] =>a[3] => 40
-		System.out.println(a[a.length]);//a[5]==>AIOBE
+		public static void main(String[] args) {
+			int[] a = {10,20,30,40,50};
+			System.out.println(a[1]);
+			System.out.println(a[2]);
+			System.out.println(a[4]);
+			System.out.println(a[a.length-2]);//a[5-2] =>a[3] => 40
+			System.out.println(a[a.length]);//a[5]==>AIOBE
+		}
+
 	}
-
-}
 
 --> In Declaare then initialize approach, size of the array is mandatory.
 EX: int[] a = new int[]; 
@@ -163,41 +162,41 @@ EX:
 ---
 
 
-public class Test {
+	public class Test {
 
-	public static void main(String[] args) {
-		int[] a = new int[5];
-		a[0] = 10; --> Valid
-		a[1] = 20; --> Valid
-		a[2] = 30; --> Valid
-		a[3] = 40; --> Valid
-		a[4] = 50; --> Valid
-		a[5] = 60; --> Invalid, java.lang.ArrayIndexOutOfBoundsException
+		public static void main(String[] args) {
+			int[] a = new int[5];
+			a[0] = 10; --> Valid
+			a[1] = 20; --> Valid
+			a[2] = 30; --> Valid
+			a[3] = 40; --> Valid
+			a[4] = 50; --> Valid
+			a[5] = 60; --> Invalid, java.lang.ArrayIndexOutOfBoundsException
 
+		}
 	}
-}
 
 EX:
 ---
 
-public class Test {
+	public class Test {
 
-	public static void main(String[] args) {
-		int[] a = new int[5];
-		a[0] = 10;
-		a[1] = 20;
-		a[2] = 30;
-		a[3] = 40;
-		a[4] = 50;
-		//a[5] = 60; -> AIOBE
-		System.out.println(a[1]);
-		System.out.println(a[3]);
-		System.out.println(a[4]);
-		System.out.println(a[a.length-3]);//a[5-3]=>a[2] => 30
-		//System.out.println(a[10]);---> AIOBE
-		System.out.println(a[a.length]);//a[5] ==> AIOBE
+		public static void main(String[] args) {
+			int[] a = new int[5];
+			a[0] = 10;
+			a[1] = 20;
+			a[2] = 30;
+			a[3] = 40;
+			a[4] = 50;
+			//a[5] = 60; -> AIOBE
+			System.out.println(a[1]);
+			System.out.println(a[3]);
+			System.out.println(a[4]);
+			System.out.println(a[a.length-3]);//a[5-3]=>a[2] => 30
+			//System.out.println(a[10]);---> AIOBE
+			System.out.println(a[a.length]);//a[5] ==> AIOBE
+		}
 	}
-}
 
 If we want to read all elements from an array then we have to use the following two approaches.
 	1. By Using refVar[index] Multiple times.
@@ -206,18 +205,18 @@ If we want to read all elements from an array then we have to use the following 
 1. By Using refVar[index] Multiple times:
 ------------------------------------------
 
-public class Test {
+	public class Test {
 
-	public static void main(String[] args) {
-		int[] a = {10,20,30,40,50};
-		System.out.println(a[0]);
-		System.out.println(a[1]);
-		System.out.println(a[2]);
-		System.out.println(a[3]);
-		System.out.println(a[4]);
+		public static void main(String[] args) {
+			int[] a = {10,20,30,40,50};
+			System.out.println(a[0]);
+			System.out.println(a[1]);
+			System.out.println(a[2]);
+			System.out.println(a[3]);
+			System.out.println(a[4]);
+		}
+
 	}
-
-}
 
 The above approach is usefull when less no of elements are existed in an array, if we have more no of elements in an array then the above approach is not suggestible, in this case, we have to use loops.
 
@@ -238,48 +237,48 @@ In the case of arrays, if we want to read elements from an array by using loops 
 
 EX:
 ---	
-public class Test {
-	public static void main(String[] args) {
-		int[] a = {10,20,30,40,50};
-		for(int index = 0; index < a.length; index++) {
-			System.out.println(a[index]);
+	public class Test {
+		public static void main(String[] args) {
+			int[] a = {10,20,30,40,50};
+			for(int index = 0; index < a.length; index++) {
+				System.out.println(a[index]);
+			}
 		}
 	}
-}
 
 EX:
 ---
 
-public class Test {
+	public class Test {
 
-	public static void main(String[] args) {
-		int[] a = {10,20,30,40,50};
-		int index = 0;
-		while(index < a.length) {
-			System.out.println(a[index]);
-			index = index + 1;
+		public static void main(String[] args) {
+			int[] a = {10,20,30,40,50};
+			int index = 0;
+			while(index < a.length) {
+				System.out.println(a[index]);
+				index = index + 1;
+			}
+
 		}
-		
-	}
 
-}
+	}
 
 EX:
 ----
 
-public class Test {
+	public class Test {
 
-	public static void main(String[] args) {
-		String[] empNames = {"AAA", "BBB", "CCC", "DDD", "EEE"};
-		int index = 0;
-		do {
-			System.out.println(empNames[index]);
-			index = index + 1;
-		} while (index < empNames.length);
-		
+		public static void main(String[] args) {
+			String[] empNames = {"AAA", "BBB", "CCC", "DDD", "EEE"};
+			int index = 0;
+			do {
+				System.out.println(empNames[index]);
+				index = index + 1;
+			} while (index < empNames.length);
+
+		}
+
 	}
-
-}
 
 To read elements from an array if we use for loop then we are able to get the following problems.
 
@@ -319,27 +318,27 @@ for(int element: a){
 EX:
 ----
 
-public class Test {
+	public class Test {
 
-	public static void main(String[] args) {
-		int[] a = {10, 20, 30, 40, 50};
-		for(int element: a) {
-			System.out.println(element);
+		public static void main(String[] args) {
+			int[] a = {10, 20, 30, 40, 50};
+			for(int element: a) {
+				System.out.println(element);
+			}
+			System.out.println();
+
+			String[] empNames = new String[5];
+			empNames[0] = "AAA";
+			empNames[1] = "BBB";
+			empNames[2] = "CCC";
+			empNames[3] = "DDD";
+			empNames[4] = "EEE";
+			for(String empName: empNames) {
+				System.out.println(empName);
+			}
 		}
-		System.out.println();
-		
-		String[] empNames = new String[5];
-		empNames[0] = "AAA";
-		empNames[1] = "BBB";
-		empNames[2] = "CCC";
-		empNames[3] = "DDD";
-		empNames[4] = "EEE";
-		for(String empName: empNames) {
-			System.out.println(empName);
-		}
+
 	}
-
-}
 
 Note: 'for-Each' loop is applicable for only retrieving elements from arrays and from Collections, 'for-Each' loop is not applicable for normal iterations, 
 where we have to use normal for loop only.
@@ -397,16 +396,16 @@ a[3][2] = 6;
 EX:
 ---
 
-public class Test {
-	public static void main(String[] args) {
-		int[][] a = {{1,2,3},{2,3,4},{3,4,5},{4,5,6}};
-		System.out.println(a);//[[I@abc123
-		System.out.println(a.length);//4
-		System.out.println(a[0]);//[I@a111
-		System.out.println(a[0].length);//3
-		System.out.println(a[0][1]);//2
+	public class Test {
+		public static void main(String[] args) {
+			int[][] a = {{1,2,3},{2,3,4},{3,4,5},{4,5,6}};
+			System.out.println(a);//[[I@abc123
+			System.out.println(a.length);//4
+			System.out.println(a[0]);//[I@a111
+			System.out.println(a[0].length);//3
+			System.out.println(a[0][1]);//2
+		}
 	}
-}
 
 If we want to read elements from an array then we have to use the following two approaches.
 
@@ -418,29 +417,29 @@ If we want to read elements from an array then we have to use the following two 
 EX:
 ---
 
-public class Test {
-	public static void main(String[] args) {
-		int[][] a = {{1,2,3},{2,3,4},{3,4,5},{4,5,6}};
-		System.out.println(a[0][0]);
-		System.out.println(a[0][1]);
-		System.out.println(a[0][2]);
-		System.out.println();
-		
-		System.out.println(a[1][0]);
-		System.out.println(a[1][1]);
-		System.out.println(a[1][2]);
-		System.out.println();
-		
-		System.out.println(a[2][0]);
-		System.out.println(a[2][1]);
-		System.out.println(a[2][2]);
-		System.out.println();
-		
-		System.out.println(a[3][0]);
-		System.out.println(a[3][1]);
-		System.out.println(a[3][2]);
+	public class Test {
+		public static void main(String[] args) {
+			int[][] a = {{1,2,3},{2,3,4},{3,4,5},{4,5,6}};
+			System.out.println(a[0][0]);
+			System.out.println(a[0][1]);
+			System.out.println(a[0][2]);
+			System.out.println();
+
+			System.out.println(a[1][0]);
+			System.out.println(a[1][1]);
+			System.out.println(a[1][2]);
+			System.out.println();
+
+			System.out.println(a[2][0]);
+			System.out.println(a[2][1]);
+			System.out.println(a[2][2]);
+			System.out.println();
+
+			System.out.println(a[3][0]);
+			System.out.println(a[3][1]);
+			System.out.println(a[3][2]);
+		}
 	}
-}
 
 
 2. By Using Loops
@@ -452,41 +451,41 @@ In Java , we are able to use three types of loops .
 EX:
 ---
 
-public class Test {
-	public static void main(String[] args) {
-		int[][] a = {{1,2,3},{2,3,4},{3,4,5},{4,5,6}};
-		for(int row = 0; row < a.length; row++) {
-			for(int col = 0; col < a[row].length; col++) {
-				System.out.print(a[row][col]+" ");
+	public class Test {
+		public static void main(String[] args) {
+			int[][] a = {{1,2,3},{2,3,4},{3,4,5},{4,5,6}};
+			for(int row = 0; row < a.length; row++) {
+				for(int col = 0; col < a[row].length; col++) {
+					System.out.print(a[row][col]+" ");
+				}
+				System.out.println();
 			}
 			System.out.println();
-		}
-		System.out.println();
-		int row = 0;
-		while(row < a.length) {
-			int col = 0;
-			while(col < a[row].length) {
-				System.out.print(a[row][col]+" ");
-				col = col + 1;
+			int row = 0;
+			while(row < a.length) {
+				int col = 0;
+				while(col < a[row].length) {
+					System.out.print(a[row][col]+" ");
+					col = col + 1;
+				}
+				row = row + 1;
+				System.out.println();
 			}
-			row = row + 1;
 			System.out.println();
-		}
-		System.out.println();
-		
-		int rowIndex = 0;
-		do {
-			int colIndex = 0;
+
+			int rowIndex = 0;
 			do {
-				System.out.print(a[rowIndex][colIndex]+" ");
-				colIndex = colIndex + 1;
-			} while (colIndex < a[rowIndex].length);
-			rowIndex = rowIndex + 1;
-			System.out.println();
-		} while (rowIndex < a.length);
-		
+				int colIndex = 0;
+				do {
+					System.out.print(a[rowIndex][colIndex]+" ");
+					colIndex = colIndex + 1;
+				} while (colIndex < a[rowIndex].length);
+				rowIndex = rowIndex + 1;
+				System.out.println();
+			} while (rowIndex < a.length);
+
+		}
 	}
-}
 
 In Java applications, we are able to use for loop, while loop and do-while loop to retrieve elements from arrays, but, it is suggestible to use 
 for loop as we know the no of iterations in advance before writing loop that is length of the array.
@@ -506,17 +505,17 @@ for(ArrayDataType element: arrayRefVar){
 }
 EX:
 ----
-public class Test {
-	public static void main(String[] args) {
-		int[][] a = {{1,2,3},{2,3,4},{3,4,5},{4,5,6}};
-		for(int[] row: a) {
-			for(int val: row) {
-				System.out.print(val+" ");
+	public class Test {
+		public static void main(String[] args) {
+			int[][] a = {{1,2,3},{2,3,4},{3,4,5},{4,5,6}};
+			for(int[] row: a) {
+				for(int val: row) {
+					System.out.print(val+" ");
+				}
+				System.out.println();
 			}
-			System.out.println();
 		}
 	}
-}
 
 Q)Find the valid syntaxes from the following array declarations?
 -----------------------------------------------------------------
@@ -539,59 +538,59 @@ In Java applications, we are able to declare arrays for both primitive data type
 interfaces, enums,.....
 EX:
 ----
-class Course{
-	String cid;
-	String cname;
-	int ccost;
-	
-	Course(String cid, String cname, int ccost){
-		this.cid = cid;
-		this.cname = cname;
-		this.ccost = ccost;
-	}
-}
+	class Course{
+		String cid;
+		String cname;
+		int ccost;
 
-class Student{
-	String sid;
-	String sname;
-	String saddr;
-	Course[] courses;
-	
-	Student(String sid, String sname, String saddr, Course[] courses){
-		this.sid = sid;
-		this.sname = sname;
-		this.saddr = saddr;
-		this.courses = courses;
-	}
-	
-	public void getStudentDetails() {
-		System.out.println("Student Details");
-		System.out.println("---------------------");
-		System.out.println("Student Id       : "+sid);
-		System.out.println("Student Name     : "+sname);
-		System.out.println("Student Address  : "+saddr);
-		System.out.println();
-		System.out.println("CID\tCNAME\tCCOST");
-		System.out.println("-----------------------");
-		for(Course course: courses) {
-			System.out.print(course.cid+"\t");
-			System.out.print(course.cname+"\t");
-			System.out.print(course.ccost+"\n");
+		Course(String cid, String cname, int ccost){
+			this.cid = cid;
+			this.cname = cname;
+			this.ccost = ccost;
 		}
 	}
-}
-public class Test {
-	public static void main(String[] args) {
-		Course course1 = new Course("C-111", "C", 1000);
-		Course course2 = new Course("C-222", "C++", 2000);
-		Course course3 = new Course("C-333", "JAVA", 5000);
-		Course course4 = new Course("C-444", ".NET", 4000);
-		Course[] courses = {course1, course2, course3, course4};
-		
-		Student std = new Student("S-111", "Durga", "Hyd", courses);
-		std.getStudentDetails();
+
+	class Student{
+		String sid;
+		String sname;
+		String saddr;
+		Course[] courses;
+
+		Student(String sid, String sname, String saddr, Course[] courses){
+			this.sid = sid;
+			this.sname = sname;
+			this.saddr = saddr;
+			this.courses = courses;
+		}
+
+		public void getStudentDetails() {
+			System.out.println("Student Details");
+			System.out.println("---------------------");
+			System.out.println("Student Id       : "+sid);
+			System.out.println("Student Name     : "+sname);
+			System.out.println("Student Address  : "+saddr);
+			System.out.println();
+			System.out.println("CID\tCNAME\tCCOST");
+			System.out.println("-----------------------");
+			for(Course course: courses) {
+				System.out.print(course.cid+"\t");
+				System.out.print(course.cname+"\t");
+				System.out.print(course.ccost+"\n");
+			}
+		}
 	}
-}
+	public class Test {
+		public static void main(String[] args) {
+			Course course1 = new Course("C-111", "C", 1000);
+			Course course2 = new Course("C-222", "C++", 2000);
+			Course course3 = new Course("C-333", "JAVA", 5000);
+			Course course4 = new Course("C-444", ".NET", 4000);
+			Course[] courses = {course1, course2, course3, course4};
+
+			Student std = new Student("S-111", "Durga", "Hyd", courses);
+			std.getStudentDetails();
+		}
+	}
  
 Anonymous Arrays:
 ------------------
@@ -609,17 +608,17 @@ m1(new int[]{1,2,3,4});
 
 EX:
 ----
-class Bank{
-	public void displayCustomersNames(String[] customerNames) {
-		for(String customerName: customerNames) {
-			System.out.println(customerName);
+	class Bank{
+		public void displayCustomersNames(String[] customerNames) {
+			for(String customerName: customerNames) {
+				System.out.println(customerName);
+			}
 		}
 	}
-}
-public class Test {
-	public static void main(String[] args) {
-		
-		Bank bank = new Bank();
-		bank.displayCustomersNames(new String[]{"AAA", "BBB", "CCC", "DDD", "EEE"});
+	public class Test {
+		public static void main(String[] args) {
+
+			Bank bank = new Bank();
+			bank.displayCustomersNames(new String[]{"AAA", "BBB", "CCC", "DDD", "EEE"});
+		}
 	}
-}
