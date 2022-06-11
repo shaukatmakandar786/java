@@ -235,4 +235,58 @@ removed then retainsAll() method will return false value.
         true
         [B,C,D]
         false
-        [B,C,D
+        [B,C,D]  
+        
+7. public int size()  
+
+ This method can be used to return an integer value representing the no of elements  
+ which are existed in the Collection object.  
+ 
+8. public void clear()  
+
+ This method can be used to remove all elements from Collection object. 
+ 
+9. public boolean isEmpty()  
+
+ This method can be used to check whether Collection object is empty or not. If the   
+ Collection object is empty then isEmpty() method will return "true" value. If the    
+ Collection object is not empty then isEmpty() method will return "false" value.  
+ 
+10. public Object[] toArray()  
+
+ This method will return all the elements of the Collection object in the form of Object[].  
+ 
+        import java.util.*; 
+        class Test 
+        { 
+                public static void main(String[] args) 
+                { 
+                        ArrayList al=new ArrayList(); 
+                        al.add("A"); 
+                        al.add("B"); 
+                        al.add("C"); 
+                        al.add("D"); 
+                        al.add("E"); 
+                        al.add("F"); 
+                        System.out.println(al); 
+                        System.out.println(al.size()); 
+                        Object[] obj=al.toArray(); 
+                        for(Object o: obj) 
+                        { 
+                        System.out.print(o+" "); 
+                        } 
+                        System.out.println(); 
+                        System.out.println(al.isEmpty()); 
+                        al.clear(); 
+                        System.out.println(al.isEmpty()); 
+                        System.out.println(al); 
+                } 
+        } 
+        OUTPUT: 
+        [A,B,C,D,E,F]
+        6
+        A B C D E F
+        false
+        true
+        [] 
+ 
