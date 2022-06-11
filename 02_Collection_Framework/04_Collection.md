@@ -1,4 +1,4 @@
-LinkedList:  
+# LinkedList:  
 
 • It was introduced in JDK1.2 version.  
 • It is not Legacy Collection.  
