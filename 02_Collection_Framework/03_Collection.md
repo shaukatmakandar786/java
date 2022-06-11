@@ -332,3 +332,45 @@ It will remove the specified element from Vector.
        [A, B, C, E]
        [A, B, E]
        []
+
+Q) What are the differences between ArrayList and Vector?  
+
+• ArrayList Class was introduced in JDK 1.2 Version  
+Vector class was introduced in JDK1.0 version.  
+
+ArrayList is not Legacy Collection  
+ Vector is Legacy Collection.  
+ 
+• ArrayList is not synchronized  
+ Vector is synchronized.  
+ 
+• No method is synchronized Method in ArrayList  
+ Almost all the methods are synchronized methods in vector.  
+ 
+• ArrayList allows more than one Thread at a Time to access Data  
+ Vector allows only one thread at a time to access data.  
+ 
+• ArrayList follows parallel Execution  
+ Vector follows sequential execution.  
+ 
+• ArrayList is able to reduce Application Execution Time  
+ Vector is able to increase application execution time.  
+ 
+• ArrayList is able to improve Application Performance  
+ Vector is able to reduce application performance.  
+ 
+• ArrayList is not giving guarantee for data consistency.  
+ Vector is giving guarantee for data consistency.  
+ 
+• ArrayList is not threadsafe.  
+ Vector is threadsafe.  
+ 
+• ArrayList Incremental Capacity is (Current_Capacity*3/2)+1  
+ Vector incremental capacity is 2*Current_Capacity  
+ 
+• We are unable to get Capacity Value of ArrayList, because, no capacity() Method in ArrayList Class.  
+We can get capacity value of Vector, because, capacity() method is existed in vector class.  
+
+
+ 
+ 
