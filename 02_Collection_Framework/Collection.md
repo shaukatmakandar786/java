@@ -85,3 +85,22 @@ Framework".
  Maps are able to store all the elements in the form of Key-value pairs.  
  EX: To represent Telephone Directory, where we are representing phone number and  
  Customer Name we have to use Maps. 
+ 
+# Q) What are the differences between List and Set?  
+ 
+• List is index based, it able to allow all the elements as per indexing.
+Set is not index based, it able to allow all the elements on the basis of elements hash 
+code values.  
+• List is able to allow duplicate elements.  
+Set is not allowing duplicate elements.  
+• List is able to allow any number of null values.  
+Set is able to allow only one null value.  
+• List is following insertion order.  
+Set is not following insertion order by default.  
+ Note: LinkedHashSet is following insertion order.  
+• List is not following sorting order.  
+Sets are not following sorting order by default.  
+Note: SortedSet, NavigableSet and TreeSet are following Sorting order.  
+• List is able to allow heterogeneous elements.  
+Sets are able to allow heterogeneous elements by default.  
+Note: SortedSett, NavigableSet and TreeSet are allowing only Homogeneous elements.  
