@@ -76,4 +76,4 @@ provide flexibility to design applications.
 To represent Collection objects in java applications, JAVA has provided predefined  
 classes and interfaces in the form of java.util package called as "Collection  
 Framework".  
-![CollectionFramework](https://en.wikipedia.org/wiki/Image)
+![CollectionFramework](https://github.com/shaukatmakandar786/Spring-notes-images/blob/main/coleectionFramework.png)
