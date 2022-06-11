@@ -371,6 +371,57 @@ ArrayList is not Legacy Collection
 • We are unable to get Capacity Value of ArrayList, because, no capacity() Method in ArrayList Class.  
 We can get capacity value of Vector, because, capacity() method is existed in vector class.  
 
+Stack:  
+It was introduced in JDK 1.0 version, it is a Legacy Collection and it is a child class to Vector  
+class. It able to arrange all the elements as per "Last In First Out" [LIFO] alg.  
 
+Constructor:  
+
+public Stack()  
+
+It will create an empty Stack object.  
+EX: Stack s = new Stack();  
  
+Methods:  
+
+• public void push(Object obj)  
+ It will add the specified element to Stack.  
  
+• public Object pop()  
+ It will remove and return top of the stack.  
+ 
+• public Object peek()  
+ It will return top of the stack. 
+ 
+• public int search(Object obj)  
+It will check whether the specified element is existed or not in the Stack, if the  
+specified element is not existed then it will return '-1' value, if the specified element is  
+existed then it will return its position.  
+
+      import java.util.*; 
+      class Test 
+      { 
+            public static void main(String[] args) 
+            { 
+                  Stack s=new Stack(); 
+                  s.push("A"); 
+                  s.push("B"); 
+                  s.push("C"); 
+                  s.push("D"); 
+                  s.push("E"); 
+                  System.out.println(s); 
+                  System.out.println(s.pop()); 
+                  System.out.println(s); 
+                  System.out.println(s.peek()); 
+                  System.out.println(s); 
+                  System.out.println(s.search("B")); 
+                  System.out.println(s.search("X")); 
+            } 
+       }  
+       
+       [A, B, C, D, E]E
+       [A, B, C, D]
+       D
+       [A, B, C, D]
+       3
+       -1
