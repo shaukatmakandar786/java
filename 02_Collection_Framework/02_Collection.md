@@ -127,3 +127,112 @@ return false value.
                         System.out.println(al); 
                 } 
         }
+
+        OUTPUT: 
+        [A,B,C,D,E,F]
+        [B,C,D]
+        true
+        [A,E,F]
+        false
+        [A,E,F]
+        
+5. public boolean contains(Object obj)
+
+This method will check whether the specified element is existed or not in the  
+Collection object. If the specified element is existed then this method will return  
+"true" value. If the specified element is not existed then this method will return  
+"false" value.        
+
+        import java.util.*; 
+        class Test 
+        { 
+                public static void main(String[] args) 
+                { 
+                        ArrayList al=new ArrayList(); 
+                        al.add("A"); 
+                        al.add("B"); 
+                        al.add("C"); 
+                        al.add("D"); 
+                        al.add("E"); 
+                        al.add("F"); 
+                        System.out.println(al); 
+                        System.out.println(al.contains("B")); 
+                        System.out.println(al.contains("X")); 
+                } 
+        } 
+        OUTPUT: 
+        [A,B,C,D,E,F]
+        true
+        false
+        
+6. public boolean containsAll(Collection c)  
+This method will check whether all the elements of the specified Collection are  
+available or not in the present Collection object. If all the elements are existed then   
+containsAll() method will return true value, if atleast one element is not existed then  
+containsAll() method will return false value.      
+
+        import java.util.*; 
+        class Test 
+        { 
+                public static void main(String[] args) 
+                { 
+                        ArrayList al=new ArrayList(); 
+                        al.add("A"); 
+                        al.add("B"); 
+                        al.add("C"); 
+                        al.add("D"); 
+                        al.add("E"); 
+                        al.add("F"); 
+                        System.out.println(al); 
+                        ArrayList al1=new ArrayList(); 
+                        al1.add("B"); 
+                        al1.add("C"); 
+                        al1.add("D"); 
+                        System.out.println(al.containsAll(al1)); 
+                        al1.add("X"); 
+                        al1.add("Y"); 
+                        System.out.println(al.containsAll(al1)); 
+                } 
+        } 
+        OUTPUT: 
+        [A,B,C,D,E,F]
+        true
+        false
+
+7. public boolean retainAll(Collection c)  
+This method will remove all the elements from the present Collection object except  
+the elements which are existed in the specified Collection object. If at least one  
+element is removed then retainAll() method will return true value. If no elements are   
+removed then retainsAll() method will return false value.  
+
+        import java.util.*; 
+        class Test 
+        { 
+                public static void main(String[] args) 
+                { 
+                        ArrayList al=new ArrayList(); 
+                        al.add("A"); 
+                        al.add("B"); 
+                        al.add("C"); 
+                        al.add("D"); 
+                        al.add("E"); 
+                        al.add("F"); 
+                        System.out.println(al); 
+                        ArrayList al1=new ArrayList(); 
+                        al1.add("B"); 
+                        al1.add("C"); 
+                        al1.add("D"); 
+                        System.out.println(al1); 
+                        System.out.println(al.retainAll(al1)); 
+                        System.out.println(al); 
+                        System.out.println(al.retainAll(al1)); 
+                        System.out.println(al); 
+                }
+        } 
+        OUTPUT: 
+        [A,B,C,D,E,F]
+        [B,C,D]
+        true
+        [B,C,D]
+        false
+        [B,C,D
