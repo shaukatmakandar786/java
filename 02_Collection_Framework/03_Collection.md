@@ -78,3 +78,74 @@ method will rise an exception like java.lang.indexOutOfBoundsException.
                       System.out.println(al.lastIndexOf("X")); 
                   } 
             } 
+
+            [A, B, C, D, E]
+            [A, X, B, C, D, E]
+            [A, X, B, C, D, E, F]
+            [A, X, B, Y, D, E, F]
+            D
+            F
+            [A, X, B, Y, D, E]
+            [A, X, B, Y, D, E, X, B, X]
+            1
+            8  
+        
+ArrayList: 
+
+• It was provided by JAVA along with JDK 1.2 version.  
+• It is a direct implementation class to List interface.  
+• It is index based.  
+• It allows duplicate elements.  
+• It follows insertion order.  
+• It will not follow sorting order.  
+• It allows heterogeneous elements.  
+• It allows any number of null values.  
+• Its internal data structure is "Resizable Array".  
+• Its initial capacity is 10 elements.  
+• Its incremental capacity ration is   
+new_Capacity = (Current_Capacity*3/2)+1  
+• It is best option for frequent retrieval operations.  
+• It is not synchronized.  
+• No method is synchronized method in ArrayList.  
+• It allows more than one thread to access data.  
+• It follows parallel execution.  
+• It will reduce execution time.  
+• It will improve application performance.  
+• It will not give guarantee for data consistency.  
+• It is not thread safe.  
+• It is not Legacy Collection.  
+
+## Constructors: 
+
+• public ArrayList()  
+ It can be used to create an empty ArrayList object with 10 elements as default capacity value.  
+ 
+ EX: ArrayList al = new ArrayList();  
+ 
+ • public ArrayList(int capacity)  
+ It can be used to create an empty ArrayList object with the specified capacity.  
+ 
+ EX: ArrayList al = new ArrayList(20);  
+ 
+• public ArrayList(Collection c)  
+
+ It can be used to create an ArrayList object with all the elements of the specified Collection object.  
+  
+        import java.util.*; 
+        class Test 
+        { 
+           public static void main(String[] args) 
+           { 
+              ArrayList al1=new ArrayList(); 
+              al1.add("AAA"); 
+              al1.add("BBB"); 
+              al1.add("CCC"); 
+              al1.add("DDD"); 
+              System.out.println(al1); 
+              ArrayList al2=new ArrayList(al1); 
+              System.out.println(al2); 
+              } 
+        } 
+        OUTPUT: 
+        [AAA,BBB,CCC,DDD]
+        [AAA,BBB,CCC,DDD]
