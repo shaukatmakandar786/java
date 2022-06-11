@@ -77,3 +77,11 @@ To represent Collection objects in java applications, JAVA has provided predefin
 classes and interfaces in the form of java.util package called as "Collection  
 Framework".  
 ![CollectionFramework](https://github.com/shaukatmakandar786/Spring-notes-images/blob/main/coleectionFramework.png)
+
+# Q) What are the differences between Collection and Map?  
+ Collections are able to store all the elements individually, not in the form of Key-value pairs.  
+ EX: To store 10 Employee objects we will use Collection.  
+
+ Maps are able to store all the elements in the form of Key-value pairs.  
+ EX: To represent Telephone Directory, where we are representing phone number and  
+ Customer Name we have to use Maps. 
