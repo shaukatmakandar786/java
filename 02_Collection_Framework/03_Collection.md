@@ -149,3 +149,32 @@ new_Capacity = (Current_Capacity*3/2)+1
         OUTPUT: 
         [AAA,BBB,CCC,DDD]
         [AAA,BBB,CCC,DDD]
+
+
+        import java.util.*; 
+        class Test 
+        { 
+            public static void main(String[] args) 
+            {
+                 ArrayList al=new ArrayList(); 
+                 al.add("A"); 
+                 al.add("B"); 
+                 al.add("C"); 
+                 al.add("D"); 
+                 al.add("E"); 
+                 System.out.println(al); 
+                 al.add("B"); 
+                 System.out.println(al); 
+                 al.add(new Integer(10)); 
+                 System.out.println(al); 
+                 al.add(null); 
+                 al.add(null); 
+                 System.out.println(al); 
+            } 
+        }
+        
+        [A, B, C, D, E]
+        [A, B, C, D, E, B]
+        [A, B, C, D, E, B, 10]
+        [A, B, C, D, E, B, 10, null, null]
+        
