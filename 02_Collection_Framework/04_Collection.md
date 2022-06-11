@@ -183,7 +183,7 @@ Drawbacks:
 • Enumeration is applicable for only Legacy Collections.  
 • Enumeration is able to allow only read operation while iterating elements.  
 
-• Iterator:  
+## Iterator:  
 
 • Iterator is an interface provided JAVA along with its JDK1.2 version.  
 • Iterator can be used to retrieve all the elements from Collection objects in one by one fashion.  
@@ -241,3 +241,142 @@ public void remove()
        D
        E
        [A, B, D, E]
+       
+## ListIterator:   
+• It is an interface provided by JAVA along with JDK1.2 version.  
+• It able to allow to read elements in both forward direction and backward direction.  
+• It able to allow the operations like read, insert, replace and remove while iterating  
+elements.  
+• If we want to use ListIterator in java applications then we have to use the following 
+steps.  
+
+• Create ListIterator Object:  
+
+• To create ListIterator object we have to use the following method.
+• public ListIterator listIterator()  
+
+• EX: ListIterator lit = ll.listIterator();  
+
+• Retrieve Elements from ListIterator  
+
+ To retrieve elements from ListIterator in Forward direction then we have to use the  
+ following methods.  
+ 
+public boolean hasNext()  
+
+It will check whether next element is existed or not from the current cursor position.  
+
+public Object next()  
+
+It will return next element and it will move cursor to the next position in forward  
+direction.  
+
+public int nextIndex()  
+
+It will return next index value from the current cursor position.  
+
+To retrieve elements in Backward direction we have to use the following methods.  
+
+public boolean hasPrevious()  
+
+It will check whether previous element is existed or not from the current cursor position,  
+If previous element is existed then it will return "true" value, if previous element is not  
+existed then it will return false value.  
+
+public Object previous()  
+
+It will return previous element and it will move cursor to the next previous position.  
+
+public int previousIndex()  
+
+It will return previous index value from the current cursor position.  
+To perform the operations like remove, insert and replace over the elements we have to  
+use the following methods. 
+
+• public void remove()  
+• public void add(Object obj)  
+• public void set(Object obj)  
+
+       import java.util.*; 
+       class Test 
+       { 
+            public static void main(String[] args) 
+            { 
+                 LinkedList ll=new LinkedList(); 
+                 ll.add("A"); 
+                 ll.add("B"); 
+                 ll.add("C"); 
+                 ll.add("D"); 
+                 ll.add("E"); 
+                 ll.add("F"); 
+                 System.out.println(ll); 
+                 ListIterator lit=ll.listIterator(); 
+                 System.out.println("Elements in Forward Direction"); 
+                 while(lit.hasNext()) 
+                 { 
+                 System.out.println(lit.nextIndex()+"--->"+lit.next()); 
+                 } 
+                 System.out.println(); 
+                 System.out.println("Elements in Backward Direction"); 
+                 while(lit.hasPrevious()) 
+                 { 
+                 System.out.println(lit.previousIndex()+"--->"+lit.previous()); 
+                 } 
+            } 
+       } 
+
+       [A, B, C, D, E, F]
+       Elements in Forward Direction
+       0--->A
+       1--->B
+       2--->C
+       3--->D
+       4--->E
+       5--->F
+
+       Elements in Backward Direction
+       5--->F
+       4--->E
+       3--->D
+       2--->C
+       1--->B
+       0--->A
+       
+-------------------------------------------------------------------------------------
+
+        import java.util.*; 
+        class Test1 
+        { 
+             public static void main(String[] args) 
+             { 
+               LinkedList ll=new LinkedList(); 
+               ll.add("A"); 
+               ll.add("B"); 
+               ll.add("C"); 
+               ll.add("D"); 
+               ll.add("E"); 
+               ll.add("F"); 
+               System.out.println(ll); 
+               ListIterator lit=ll.listIterator(); 
+               while(lit.hasNext()) 
+               { 
+                  String element=(String)lit.next(); 
+                  if(element.equals("B")) 
+                  { 
+                     lit.add("X"); 
+                  } 
+                  if(element.equals("D")) 
+                  { 
+                     lit.set("Y"); 
+                  } 
+                  if(element.equals("E")) 
+                  { 
+                     lit.remove(); 
+                  } 
+               } 
+               System.out.println(ll); 
+            } 
+        }
+        
+        [A, B, C, D, E, F]
+        [A, B, X, C, Y, F]
