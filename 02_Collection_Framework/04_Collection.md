@@ -39,3 +39,34 @@ ll1.add("D");
 System.out.println(ll1);  
 LinkedList ll2=new LinkedList(ll1);  
 System.out.println(ll2);  
+
+OUTPUT:
+[A, B, C, D]  
+[A, B, C, D]  
+
+Methods:  
+
+• public void addFirst(Object obj)  
+
+ It will add the specified element as first element to LinkedList.  
+ 
+• public void addLast(Object obj)  
+
+ It will add the specified element as last element to LinkedList.  
+ 
+• public Object getFirst()  
+
+ It will return first element from LinkedList.  
+ 
+• public Object getLast()  
+
+ It will return last element from LinkedList.  
+ 
+• public void removeFirst()  
+
+ It will remove first element from LinkedList.  
+ 
+• public void removeLast()  
+
+ It will remove last element from LinkedList.  
+ 
