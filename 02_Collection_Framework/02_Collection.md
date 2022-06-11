@@ -65,4 +65,65 @@ value, if addition operation is failure then addAll() method will return "false"
         false
         [D,A,B,C]
 
-    
+3. public boolean remove(Object obj)  
+
+This method can be used to remove the specified element from the Collection object.If  
+remove operation is success then remove() method will return true value, if remove   
+operation is failure then remove() method will return false value.  
+
+        import java.util.*; 
+        class Test 
+        { 
+                public static void main(String[] args) 
+                { 
+                        ArrayList al=new ArrayList(); 
+                        al.add("A"); 
+                        al.add("B"); 
+                        al.add("C"); 
+                        al.add("D"); 
+                        System.out.println(al); 
+                        System.out.println(al.remove("B")); 
+                        System.out.println(al); 
+                        System.out.println(al.remove("B")); 
+                        System.out.println(al); 
+                } 
+        } 
+        
+        OUTPUT:
+        [A,B,C,D]
+        true
+        [A,C,D]
+        false
+        [A,C,D]
+        
+4. public boolean removeAll(Collection c)  
+
+This method can be used to remove all the elements of the specified Collection from   
+the present Collection object. If remove operation is success then removeAll() method   
+will return true value. If remove operation is not success then removeAll() method will  
+return false value.        
+
+        import java.util.*; 
+        class Test 
+        { 
+                public static void main(String[] args) 
+                { 
+                        ArrayList al=new ArrayList(); 
+                        al.add("A"); 
+                        al.add("B"); 
+                        al.add("C"); 
+                        al.add("D"); 
+                        al.add("E"); 
+                        al.add("F"); 
+                        System.out.println(al); 
+                        ArrayList al1=new ArrayList(); 
+                        al1.add("B"); 
+                        al1.add("C"); 
+                        al1.add("D"); 
+                        System.out.println(al1); 
+                        System.out.println(al.removeAll(al1)); 
+                        System.out.println(al); 
+                        System.out.println(al.removeAll(al1)); 
+                        System.out.println(al); 
+                } 
+        }
