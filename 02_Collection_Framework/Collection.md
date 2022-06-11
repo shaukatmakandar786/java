@@ -59,3 +59,21 @@ ts.add("F");
 System.out.println(ts);  
 
 OUTPUT: [A,B,C,D,E,F]  
+
+• Arrays are able to allow only one type of elements, so Arrays are able to improve   
+Typedness in java applications and they are able to perform Type safe operations.  
+Collections are able to allow different types of elements, so Collections are able to   
+reduce typedness in java applications and they are unable to perform Type safe  
+operations.  
+
+• If we know the no of elements in advance at the time of writing java applications then   
+Arrays are better to use in java applications and they will provide very good  
+performance in java applications, but, But Arrays are not flexible to design  
+applications.  
+
+In java applications, Collections are able to provide less performance, but, they will  
+provide flexibility to design applications.  
+To represent Collection objects in java applications, JAVA has provided predefined  
+classes and interfaces in the form of java.util package called as "Collection  
+Framework".  
+
