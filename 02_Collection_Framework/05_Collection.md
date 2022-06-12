@@ -402,3 +402,103 @@ EX: TreeSet ts = new TreeSet(new MyComparator());
                           //ts.add(new StringBuffer("BBB"));->ClassCastException 
                   } 
             } 
+
+When we add elements to the TreeSet object, TreeSet object will arrange all the elements  
+in a particular sorting order with the following algorithm.  
+• TreeSet will construct a Tree [Balanced Tree] on the basis of the elements  
+
+ To construct Balanced Tree we have to use the following steps.  
+• If the element is first element to the TreeSet object then make that element as "Root Node".  
+• If the element is not first element then access compareTo(--) method over the   
+present element by passing previous elements one by one of the balanced Tree   
+right from root node until the present element is located in Tree.  
+
+          • If compareTo(-) method returns -ve value then go to left child of the present  
+          node and access again compareTo(-) method by passing left child. If no left  
+          child is existed then make the present element as left child  
+
+          • If compareTo(-) method returns +ve value then go to right child and access  
+          again compareTo(-) by passing right as parameter. If no right child is existed   
+          then make the present element as right child.  
+
+          • If compareTo(-) method return 0 value then discard the present element and  
+          declare that the present element is a duplicate element of the existed element.  
+  
+• TreeSet will retrieve all the elements from balanced Tree by following in order traversal.  
+In String class, compareTo(-) method was implemented like below str1.compareTo(str2);  
+
+          • If str1 come first when compared with str2 as per dictionary order then 
+          compareTo() method will return -ve value.
+          • If str2 come first when compared with str1 in dictionary order then compareTo() 
+          method will return +ve value.
+          • If str1 and str2 are same or available at same location in dictionary order then 
+          compareTo(-) method will return 0 value.
+          
+If we want to add user defined elements like Employee, Student, Customer to TreeSet   
+then we have to use the following steps.  
+• Declare an user defined class.  
+• Implement java.lang.Comparable iterface in User defined class.   
+• Provide implementation for compareTo(-) method in user defined class.   
+• In main class, in main() method, create objects for user defined class and add objects  
+to TreeSet object.  
+
+EX sort by student name using Comparable
+
+            import java.util.TreeSet;
+
+            class Student implements Comparable
+            {
+                private int rno;
+                private String name;
+                private float per;
+
+                @Override
+                public String toString() {
+                    return "Student{" +
+                            "rno=" + rno +
+                            ", name='" + name + '\'' +
+                            ", per=" + per +
+                            '}';
+                }
+
+                public Student() {
+                }
+
+                public Student(int rno, String name, float per) {
+                    this.rno = rno;
+                    this.name = name;
+                    this.per = per;
+                }
+
+                @Override
+                public int compareTo(Object o) {
+
+                    Student s=(Student)o;
+                    int i = this.name.compareTo(s.name);
+                    if(i==-1)
+                     return i;
+                    else if(i==1)
+                        return i;
+                    else
+                        return i;
+                }
+            }
+
+            public class ComparableExample {
+
+                public static void main(String[] args) {
+
+
+                    Student s1=new Student(101,"CCCC",70.76f);
+                    Student s2=new Student(102,"BBBB",65.76f);
+                    Student s3=new Student(103,"AAAA",56.76f);
+
+                    TreeSet t1=new TreeSet();
+                    t1.add(s1);
+                    t1.add(s2);
+                    t1.add(s3);
+
+                    System.out.println(t1);
+                }
+
+            }
