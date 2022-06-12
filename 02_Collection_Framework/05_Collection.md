@@ -583,4 +583,28 @@ EX sort student whos has max lenght charecter in his name using Comparable
             [Student{rno=101, name='CCCCCCCCC', per=70.76}, Student{rno=103, name='AAAAAAA', per=56.76}, Student{rno=102, name='BBBB', per=65.76}]
 
             
-            
+If we add non-comparable objects to TreeSet object then JVM will rise an exception like  
+java.lang.ClassCastException, because, Non-Comparable objects are not providing  
+compareTo(-) method internally, but, it is required to the TreeSet inorder to provide  
+sorting order over elements.  
+
+If we want to add non-Comparable objects to TreeSet object then we must provide sorting  
+logic to TreeSet object explicitly, for this, we have to use java.util.Comparator interface.  
+If we want to use Comparator interface in java applications then we have to use the  
+following steps.            
+
+• Declare an User defined class.  
+• Implement java.util.Comparator interface in user defined class.  
+• Provide implementation for Comparator interface methods in user defined class.  
+
+     public boolean equals(Object obj)
+     public int compare(Object obj1, Object obj2)
+     
+Note: In User defined class it is not required to implement equals(-) method, because,  
+equals(-) method will come from default super class Object.     
+
+• Provide User defined Comparator object to TreeSet object  
+ EX: MyComparator mc = new MyComparator();  
+ TreeSet ts = new TreeSet(mc);  
+ 
+ 
