@@ -442,7 +442,7 @@ then we have to use the following steps.
 • In main class, in main() method, create objects for user defined class and add objects  
 to TreeSet object.  
 
-EX sort by student name using Comparable
+EX sort by student name as ascending order using Comparable
 
             import java.util.TreeSet;
 
@@ -502,3 +502,85 @@ EX sort by student name using Comparable
                 }
 
             }
+            
+            [Student{rno=103, name='AAAA', per=56.76}, Student{rno=102, name='BBBB', per=65.76}, Student{rno=101, name='CCCC', per=70.76}]
+            
+            
+EX sort by student name as decending order using Comparable
+
+            @Override
+            public int compareTo(Object o) {
+
+                Student s=(Student)o;
+                int i = this.name.compareTo(s.name);
+                if(i==-1)
+                 return 1;
+                else
+                    return 1;
+            }
+            
+EX sort student whos has max lenght charecter in his name using Comparable
+
+            import java.util.TreeSet;
+
+            class Student implements Comparable
+            {
+                private int rno;
+                private String name;
+                private float per;
+
+                @Override
+                public String toString() {
+                    return "Student{" +
+                            "rno=" + rno +
+                            ", name='" + name + '\'' +
+                            ", per=" + per +
+                            '}';
+                }
+
+                public Student() {
+                }
+
+                public Student(int rno, String name, float per) {
+                    this.rno = rno;
+                    this.name = name;
+                    this.per = per;
+                }
+
+                @Override
+                public int compareTo(Object o) {
+
+                    Student s=(Student)o;
+                    int len1=this.name.length();
+                    int len2 = s.name.length();
+
+                    if(len1<len2)
+                        return 1;
+                    else
+                        return -1;
+
+                }
+            }
+
+            public class ComparableExample {
+
+                public static void main(String[] args) {
+
+
+                    Student s1=new Student(101,"CCCCCCCCC",70.76f);
+                    Student s2=new Student(102,"BBBB",65.76f);
+                    Student s3=new Student(103,"AAAAAAA",56.76f);
+
+                    TreeSet t1=new TreeSet();
+                    t1.add(s1);
+                    t1.add(s2);
+                    t1.add(s3);
+
+                    System.out.println(t1);
+                }
+            }
+
+            [Student{rno=101, name='CCCCCCCCC', per=70.76}, Student{rno=103, name='AAAAAAA', per=56.76}, Student{rno=102, name='BBBB', per=65.76}]
+
+            
+            
