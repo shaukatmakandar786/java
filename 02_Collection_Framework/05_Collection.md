@@ -293,3 +293,112 @@ element.
           C
           [F, E, D, C, B, A]
           [B, C, D, E]
+
+# TreeSet:  
+• It was introduced in JDK 1.2 version.  
+• It is not Legacy Collection.  
+• It has provided implementation for Collection, Set, SortedSet and NavigableSet  
+interfaces.  
+• It is not index based.  
+• It is not allowing duplicate elements.  
+• It is not following insertion order.  
+• It follows Sorting order.  
+• It allows only homogeneous elements.  
+• It will not allow heterogeneous elements, if we are trying to add heterogeneous  
+elements then JVM will rise an exception like java.lang.ClasscastException.  
+• It will not allow null values, if we are trying to add any null value then JVM will rise an  
+exception like java.lang.NullPointerException.  
+• It able to allow only Comparable objects by default, if we are trying to add non  
+comparable objects then JVM will rise an exception like  
+java.lang.ClassCastException.  
+
+NOTE: If we are trying to add non comparable objects then we have to use  
+java.util.Comparator. 
+• Its internal data structure is "Balanced Tree".  
+• It is mainly for frequent search operations.  
+
+## Constructors: 
+
+• public TreeSet()  
+ It can be used to create an Empty TreeSet object.  
+ EX: TreeSet ts = new TreeSet();  
+ 
+• public TreeSet(Comparator c)  
+It will create an empty TreeSet object with the explicit Sorting mechanism in the form  
+of Comparator  
+EX: TreeSet ts = new TreeSet(new MyComparator());  
+
+• public TreeSet(SortedSet ts)  
+ It will create TreeSet object with all elements of the specified SortedSet  
+ 
+ 
+        import java.util.*; 
+        class Test 
+        { 
+              public static void main(String[] args) 
+              { 
+                  TreeSet ts1=new TreeSet(); 
+                  ts1.add("B"); 
+                  ts1.add("C"); 
+                  ts1.add("F"); 
+                  ts1.add("A"); 
+                  ts1.add("E"); 
+                  ts1.add("D"); 
+                  System.out.println(ts1); 
+                  TreeSet ts2=new TreeSet(ts1); 
+                  System.out.println(ts2); 
+              } 
+        } 
+        
+        [A, B, C, D, E, F]
+        [A, B, C, D, E, F]
+----------------------------------------------------------------------------------------
+• public TreeSet(Collection c)  
+
+ It able to create TreeSet object with all the elements of the specified Collectio
+ 
+
+          import java.util.*; 
+          class Test 
+          { 
+                public static void main(String[] args) 
+                { 
+                    ArrayList al=new ArrayList(); 
+                    al.add("B"); 
+                    al.add("C"); 
+                    al.add("F"); 
+                    al.add("A"); 
+                    al.add("E"); 
+                    al.add("D"); 
+                    System.out.println(al); 
+                    TreeSet ts=new TreeSet(al); 
+                    System.out.println(ts); 
+                } 
+          }
+          
+          [B, C, F, A, E, D]
+          [A, B, C, D, E, F]
+          
+-------------------------------------------------------------------------------------------
+
+
+            import java.util.*; 
+            class Test 
+            { 
+                  public static void main(String[] args) 
+                  { 
+                          TreeSet ts=new TreeSet(); 
+                          ts.add("B"); 
+                          ts.add("C"); 
+                          ts.add("F"); 
+                          ts.add("A"); 
+                          ts.add("E"); 
+                          ts.add("D"); 
+                          System.out.println(ts); 
+                          ts.add("B"); 
+                          System.out.println(ts); 
+                          //ts.add(null);--> NullPointerException 
+                          //ts.add(new Integer(10));-->ClassCastException 
+                          //ts.add(new StringBuffer("BBB"));->ClassCastException 
+                  } 
+            } 
