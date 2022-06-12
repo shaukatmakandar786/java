@@ -475,12 +475,8 @@ EX sort by student name as ascending order using Comparable
 
                     Student s=(Student)o;
                     int i = this.name.compareTo(s.name);
-                    if(i==-1)
-                     return i;
-                    else if(i==1)
-                        return i;
-                    else
-                        return i;
+              
+                    return i;
                 }
             }
 
@@ -513,10 +509,8 @@ EX sort by student name as decending order using Comparable
 
                 Student s=(Student)o;
                 int i = this.name.compareTo(s.name);
-                if(i==-1)
-                 return 1;
-                else
-                    return 1;
+               
+                return -i;
             }
             
 EX sort student whos has max lenght charecter in his name using Comparable
@@ -607,4 +601,63 @@ equals(-) method will come from default super class Object.
  EX: MyComparator mc = new MyComparator();  
  TreeSet ts = new TreeSet(mc);  
  
- 
+ EX sort employee by name in ascending order
+
+                import java.util.Comparator;
+                import java.util.TreeSet;
+
+                class MyComparator implements Comparator<Employee> {
+
+                    @Override
+                    public int compare(Employee o1, Employee o2) {
+
+                        int i=o1.ename.compareTo(o2.ename);
+                        return i;
+                        //return -i; for descending order
+                    }
+                }
+                class Employee
+                {
+                     int eno;
+                     String ename;
+                     float sal;
+
+                    public Employee(int eno, String ename, float sal) {
+                        this.eno = eno;
+                        this.ename = ename;
+                        this.sal = sal;
+                    }
+
+                    public Employee() {
+                    }
+
+                    @Override
+                    public String toString() {
+                        return "Employee{" +
+                                "eno=" + eno +
+                                ", ename='" + ename + '\'' +
+                                ", sal=" + sal +
+                                '}';
+                    }
+                }
+                public class ComparatorExample {
+
+                    public static void main(String[] args) {
+
+                        Employee e1=new Employee(101,"AAAA",50000);
+                        Employee e2=new Employee(102,"ZZZZ",60000);
+                        Employee e3=new Employee(103,"KKKK",20000);
+                        Employee e4=new Employee(104,"XXXX",30000);
+
+                        TreeSet t1=new TreeSet(new MyComparator());
+                        t1.add(e1);
+                        t1.add(e2);
+                        t1.add(e3);
+                        t1.add(e4);
+
+                        System.out.println(t1);
+
+                    }
+                }
+
+                [Employee{eno=101, ename='AAAA', sal=50000.0}, Employee{eno=103, ename='KKKK', sal=20000.0}, Employee{eno=104, ename='XXXX', sal=30000.0},                             Employee{eno=102, ename='ZZZZ', sal=60000.0}]
