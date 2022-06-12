@@ -111,3 +111,41 @@ specified Collection.
             [null, A, B, C, D, E]
             [null, A, B, C, D, E, 10]
 
+#LinkedHashSet:  
+
+## Q ) What are the differences between HashSet and LinkedHashSet?  
+
+• HashSet was introduced in JDK 1.2 version.  
+LinkedhashSet was introduced in JDK 1.4 version.  
+
+• HashSet is not following insertion order.  
+LinkedHashSet is following insertion order.  
+
+• The internal data structer of HashSet is "Hashtable".  
+The internal data structer of LinkedHashSet is "Hashtable" and "LinkedList".  
+
+                import java.util.*;
+                class Test 
+                { 
+                      public static void main(String[] args) 
+                      { 
+                            HashSet hs=new HashSet(); 
+                            hs.add("A"); 
+                            hs.add("B"); 
+                            hs.add("C"); 
+                            hs.add("D"); 
+                            hs.add("E"); 
+                            System.out.println(hs); 
+                            LinkedHashSet lhs=new LinkedHashSet(); 
+                            lhs.add("A"); 
+                            lhs.add("B"); 
+                            lhs.add("C"); 
+                            lhs.add("D"); 
+                            lhs.add("E"); 
+                            System.out.println(lhs); 
+                      } 
+                } 
+                
+                OUTPUT: 
+                [D,E,A,B,C]
+                [A,B,C,D,E]
