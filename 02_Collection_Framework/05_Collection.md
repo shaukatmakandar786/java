@@ -193,3 +193,103 @@ It will return SortedSet object with the elements which are less the specified e
  
  the specified first element and which are less than the specified second element.  
  
+
+          import java.util.*; 
+          class Test 
+          { 
+                public static void main(String[] args) 
+                { 
+                      TreeSet ts=new TreeSet(); 
+                      ts.add("D"); 
+                      ts.add("F"); 
+                      ts.add("B"); 
+                      ts.add("E"); 
+                      ts.add("C"); 
+                      ts.add("A"); 
+                      System.out.println(ts); 
+                      System.out.println(ts.first()); 
+                      System.out.println(ts.last()); 
+                      System.out.println(ts.headSet("D")); 
+                      System.out.println(ts.tailSet("D")); 
+                      System.out.println(ts.subSet("B","E")); 
+                } 
+          }
+
+          [A, B, C, D, E, F]
+          A
+          F
+          [A, B, C]
+          [D, E, F]
+          [B, C, D]
+          
+          
+# NavigableSet:
+
+It was introduced in JAVA6 version, it is a child interface to SortedSet interface, it is  
+following all the properties of SortedSet and it has define methods to provide navigations  
+over the elements.  
+
+## Methods: 
+
+• public Object ceiling(Object obj)  
+
+It will return lowest element among all the elements which are greater than or equals  
+to the specified element.  
+
+• public Object higher(Object obj)  
+
+It will return lowest element among all the elements which are greater than the  
+specified element.  
+
+• public Object floor(Object obj)  
+
+It will return highest element among all the elements which are less than or equals to  
+the specified element.  
+
+• Trpublic Object lower(Object obj)  
+
+It will return highest element among all the elements which are less than the specified  
+element.   
+
+• public Object pollFirst()  
+ It will remove and return first element from NavigableSet.  
+ 
+ • public Object pollLast()  
+ 
+ It will remove and return last element from NavigableSet.  
+ 
+• public NavigableSet descendingSet()  
+
+ It will return all elements in the form of NavigableSet in descending order.
+
+          import java.util.*; 
+          class Test 
+          { 
+                public static void main(String[] args) 
+                { 
+                      TreeSet ts=new TreeSet(); 
+                      ts.add("D"); 
+                      ts.add("F"); 
+                      ts.add("B");
+                      ts.add("E"); 
+                      ts.add("C"); 
+                      ts.add("A"); 
+                      System.out.println(ts); 
+                      System.out.println(ts.ceiling("D")); 
+                      System.out.println(ts.higher("D")); 
+                      System.out.println(ts.floor("D")); 
+                      System.out.println(ts.lower("D")); 
+                      System.out.println(ts.descendingSet()); 
+                      ts.pollFirst(); 
+                      ts.pollLast(); 
+                      System.out.println(ts); 
+                } 
+          } 
+          
+          [A, B, C, D, E, F]
+          D
+          E
+          D
+          C
+          [F, E, D, C, B, A]
+          [B, C, D, E]
