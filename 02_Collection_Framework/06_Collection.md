@@ -303,3 +303,249 @@ this, we have to use the following two steps.
             
             Object Creating
             Object Destroying
+
+# SortedMap:   
+• It was introduced in JDK1.2 version.  
+• It is a direct child interface to Map interface  
+• It able to allow elements in the form of Key-Value pairs, where both keys and values  
+are objects.  
+• It will not allow duplicate elements at keys side, but, it able to allow duplicate  
+elements at values side.  
+• It will not follow insertion order.  
+• It will follow sorting order.  
+• It will not allow null values at keys side. If we are trying to add null values at keys side  
+then JVM will rise an exception like java.lang.NullPointerException.  
+• It will not allow heterogeneous elements at keys side, if we are trying add  
+heterogeneous elements then JVM will rise an exception like  
+java.lang.ClassCastException.  
+• It able to allow only comparable objects at keys side by default, if we are trying to add  
+non comparable objects then JVM will rise an exception like  
+java.lang.ClassCastException.  
+• If we want to add non comparable objects then we must use Comparator. 
+
+Methods:  
+public Object firstKey()  
+public Object lastKey()  
+public SortedMap headMap(Object key)  
+public SportedMap tailMap(Object key)  
+public SortedMap subMap(Object obj1, Object obj2)  
+
+           import java.util.*; 
+           class Test 
+           { 
+                  public static void main(String[] args) 
+                  { 
+                       TreeMap tm=new TreeMap(); 
+                       tm.put("B", "BBB"); 
+                       tm.put("E", "EEE"); 
+                       tm.put("D", "DDD"); 
+                       tm.put("A", "AAA"); 
+                       tm.put("F", "FFF"); 
+                       tm.put("C", "CCC"); 
+                       System.out.println(tm); 
+                       System.out.println(tm.firstKey()); 
+                       System.out.println(tm.lastKey()); 
+                       System.out.println(tm.headMap("D")); 
+                       System.out.println(tm.tailMap("D")); 
+                       System.out.println(tm.subMap("B", "E")); 
+                  } 
+           } 
+           
+           {A=AAA, B=BBB, C=CCC, D=DDD, E=EEE, F=FFF}
+           A
+           F
+           {A=AAA, B=BBB, C=CCC}
+           {D=DDD, E=EEE, F=FFF}
+           {B=BBB, C=CCC, D=DDD}
+           
+# NavigableMap:  
+
+It was introduced in JAVA6 version, it is a child interface to SortedMap and it has defined  
+methods to provide navigations over the elements.  
+
+## Methods: 
+
+• public Object CeilingKey(Object obj)  
+• public Object higherKey(Object obj)  
+• public Object floorKey(Object obj)  
+• public Object lowerKey(Object obj)  
+• public NavigableMap descendingMap()  
+• public Map.Entry pollFirstEntry()  
+• public Map.Entry pollLastEntry()           
+
+        import java.util.*; 
+        class Test 
+        { 
+            public static void main(String[] args) 
+            { 
+                   TreeMap tm=new TreeMap(); 
+                   tm.put("A", "AAA"); 
+                   tm.put("B", "BBB"); 
+                   tm.put("C", "CCC"); 
+                   tm.put("D", "DDD"); 
+                   tm.put("E", "EEE"); 
+                   tm.put("F", "FFF"); 
+                   System.out.println(tm); 
+                   System.out.println(tm.descendingMap()); 
+                   System.out.println(tm.ceilingKey("D")); 
+                   System.out.println(tm.higherKey("D")); 
+                   System.out.println(tm.floorKey("D")); 
+                   System.out.println(tm.lowerKey("D")); 
+                   System.out.println(tm.pollFirstEntry()); 
+                   System.out.println(tm.pollLastEntry()); 
+                   System.out.println(tm); 
+            } 
+        }
+        
+        {A=AAA, B=BBB, C=CCC, D=DDD, E=EEE, F=FFF}
+        {F=FFF, E=EEE, D=DDD, C=CCC, B=BBB, A=AAA}
+        D
+        E
+        D
+        C
+        A=AAA
+        F=FFF
+        {B=BBB, C=CCC, D=DDD, E=EEE}
+        
+# TreeMap:  
+
+• It was introduced in JDK 1.2 version.  
+• It is not Legacy.  
+• It is an implementation class to Map, SoortedMap and NavigableMap interfaces.  
+• It able to allow elements in the form of Key-Value pairs, where both keys and values  
+are objects.  
+• It will not allow duplicate elements at keys side, But, it able to allow duplicate  
+elements at values side.  
+• It will not follow insertion order.  
+• It will follow sorting order.  
+• It will not allow null values at keys side. If we are trying to add null values at keys side  
+then JVM will rise an exception like java.lang.NullPointerException.  
+• It will not allow heterogeneous elements at keys side, if we are trying add  
+heterogeneous elements then JVM will rise an exception like  
+java.lang.ClassCastException.  
+• It able to allow only comparable objects at keys side by default, if we are trying to add   
+non comparable objects then JVM will rise an exception like   
+java.lang.ClassCastException.  
+• If we want to add non comparable objects then we must use Comparator.  
+• Its internal data Structer is "Red-Black Tree".  
+• It is not synchronized.  
+• No methods are synchronized in TreeMap.  
+• It allows more than one thread to access data.  
+• It will follow parallel execution.  
+• It will reduce execution time.  
+• It will improve application performance.          
+• It is not giving guarantee for Data Consistency.  
+• It is not threadsafe.  
+
+## Constructors:  
+
+• public TreeMap()  
+• public TreeMap(Comparator c)  
+• public TreeMap(SortedMap sm)  
+• public TreeMap(Map m)  
+
+        import java.util.*; 
+        class Test 
+        { 
+             public static void main(String[] args) 
+             { 
+                 TreeMap tm=new TreeMap(); 
+                 tm.put("A", "AAA"); 
+                 tm.put("B", "BBB"); 
+                 tm.put("C", "CCC"); 
+                 tm.put("D", "DDD"); 
+                 System.out.println(tm); 
+                 tm.put("B", "EEE"); 
+                 System.out.println(tm); 
+                 tm.put("E", "CCC"); 
+                 System.out.println(tm); 
+                 //tm.put(null, "EEE");-->NullPointerException 
+                  tm.put("F",null); 
+                  System.out.println(tm); 
+                  //tm.put(new Integer(10), new Integer(20));-->CCE 
+                  System.out.println(tm); 
+                  tm.put("G", new Integer(20)); 
+                  System.out.println(tm); 
+                  //tm.put(new StringBuffer("BBB"), "GGG");-->CCE 
+                  tm.put("H", new StringBuffer("HHH")); 
+                  System.out.println(tm); 
+              } 
+        }
+        
+        {A=AAA, B=BBB, C=CCC, D=DDD}
+        {A=AAA, B=EEE, C=CCC, D=DDD}
+        {A=AAA, B=EEE, C=CCC, D=DDD, E=CCC}
+        {A=AAA, B=EEE, C=CCC, D=DDD, E=CCC, F=null}
+        {A=AAA, B=EEE, C=CCC, D=DDD, E=CCC, F=null}
+        {A=AAA, B=EEE, C=CCC, D=DDD, E=CCC, F=null, G=20}
+        {A=AAA, B=EEE, C=CCC, D=DDD, E=CCC, F=null, G=20, H=HHH}
+        
+#Hashtable:  
+
+## Q) What are the differences between HashMap and Hashtable?  
+
+• HashMap was introduced in JDK 1.2 version.  
+Hashtable was introduced in JDK 1.0 version Hashtable:  
+
+• HashMap is not Legacy.  
+Hashtable is Legacy.  
+
+• In HashMap, one null value is allowed at keys side and any number of null values are allowed at values side.  
+In case of Hashtable, null values are not allowed at both keys and values side.   
+
+• HashMap is not synchronized.  
+Hashtable is synchronized.  
+
+• No method is synchronized in HashMap.  
+Almost all the methods are synchronized in Hashtable  
+
+• HashMap allows more than one thread to access data.  
+Hashtable allows only one thread at a time to access data.  
+
+• HashMap follows parallel execution.  
+Hashtable follows sequential execution.  
+
+• HashMap will reduce execution time.  
+Hashtable will increase execution time.  
+
+• HashMap will improve application performance.  
+Hashtable will reduce application performance.  
+
+• HashMap will not give guarantee for data consistency.  
+Hashtable will give guarantee for data consistency  
+
+• HashMap is not threadsafe.  
+Hashtable is threadsafe.  
+      
+
+           import java.util.*; 
+           class Test 
+           { 
+                  public static void main(String[] args) 
+                  { 
+                         HashMap hm=new HashMap(); 
+                         hm.put("A", "AAA"); 
+                         hm.put("B", "BBB"); 
+                         hm.put("C", "CCC"); 
+                         hm.put("D", "DDD"); 
+                         System.out.println(hm); 
+                         hm.put(null, "EEE"); 
+                         hm.put(null, "FFF"); 
+                         hm.put("E",null); 
+                         hm.put("F", null); 
+                         System.out.println(hm); 
+                         System.out.println(); 
+                         Hashtable ht=new Hashtable(); 
+                         ht.put("A", "AAA"); 
+                         ht.put("B", "BBB"); 
+                         ht.put("C", "CCC"); 
+                         ht.put("D", "DDD"); 
+                         System.out.println(ht); 
+                         //ht.put(null, "EEE");-->NullPointerException 
+                         //ht.put("E", null);-->NullPointerException 
+                   } 
+           }       
+           
+           {A=AAA, B=BBB, C=CCC, D=DDD}
+           {null=FFF, A=AAA, B=BBB, C=CCC, D=DDD, E=null, F=null}
+           {A=AAA, D=DDD, C=CCC, B=BBB}
