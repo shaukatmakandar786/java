@@ -149,3 +149,47 @@ The internal data structer of LinkedHashSet is "Hashtable" and "LinkedList".
                 OUTPUT: 
                 [D,E,A,B,C]
                 [A,B,C,D,E]
+                
+# SortedSet:  
+
+• It was introduced in JDK1.2 version.  
+• It is a child interface to Set interface.  
+• It is not index based.  
+• It is not allowing duplicate elements.  
+• It is not following insertion order.  
+• It follows Sorting order.  
+• It allows only homogeneous elements.  
+• It will not allow heterogeneous elements, if we are trying to add heterogeneous  
+elements then JVM wi## ll rise an exception like java.lang.ClasscastException.  
+• It will not allow null values, if we are trying to add any null value then JVM will rise an  
+exception like java.lang.NullPointerException.  
+• It able to allow only Comparable objects by default, if we are trying to add non  
+comparable objects then JVM will rise an exception like java.lang.ClassCastException.  
+Note: If we are trying to add non comparable objects then we have to use Comparator.  
+
+## Methods: 
+
+• public Object first()  
+
+ It will return first element from SortedSet.  
+ 
+• public Object last()  
+
+ It will return last element from SortedSet.  
+ 
+• public SortedSet headSet(Object obj)  
+
+It will return SortedSet object with the elements which are less the specified element.  
+
+• public SortedSet tailSet(Object obj)  
+
+ It will return SoredSet object with the elements which are greater than or equals to  
+ 
+ the specified element.  
+ 
+• public SortedSet subSet(Object obj1, Object obj2)  
+
+ It will return SortedSet object with all elements which are greater than or equals to  
+ 
+ the specified first element and which are less than the specified second element.  
+ 
