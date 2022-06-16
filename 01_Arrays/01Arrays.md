@@ -542,20 +542,20 @@ EX:
 
 Q)Find the valid syntaxes from the following array declarations?
 -----------------------------------------------------------------
-1) int[] a = new int[]; --> Invalid, Size is mandatory in SDA.
-2) int[] a = new int[3];--> Valid
-3) int[] a = new [3]int;--> Invalid
-4) int[] a = new int[-5];--> No Errors, NegativeArraySizeException
-5) int[] a = new int[2][3];--> Invalid
-6) int[][] a = new int[3][3];-->Valid
-7) int[][] a = new int[3][];--> Valid, Last dimension size is opt.
-    Note:   In the above case, whgen we assign any value, then JVM will provide java.lang.NullPointerException.
-8) int[][] a = new int[][3];--> Invalid
-9) int[][] a = new int[][]; ---> Invalid
-10)int a[][] = new int[3][3]; ---> Valid
-11)int[] a[] = new int[3][3]; ---> Valid
-12)int [][]a = new int[3][3]; ---> Valid
-13)int []a[] = new int[3][3]; ---> Valid
+1) int[] a = new int[]; --> Invalid, Size is mandatory in SDA.  
+2) int[] a = new int[3];--> Valid  
+3) int[] a = new [3]int;--> Invalid  
+4) int[] a = new int[-5];--> No Errors, NegativeArraySizeException  
+5) int[] a = new int[2][3];--> Invalid  
+6) int[][] a = new int[3][3];-->Valid  
+7) int[][] a = new int[3][];--> Valid, Last dimension size is opt.  
+    Note:   In the above case, whgen we assign any value, then JVM will provide java.lang.NullPointerException.  
+8) int[][] a = new int[][3];--> Invalid  
+9) int[][] a = new int[][]; ---> Invalid  
+10)int a[][] = new int[3][3]; ---> Valid  
+11)int[] a[] = new int[3][3]; ---> Valid  
+12)int [][]a = new int[3][3]; ---> Valid  
+13)int []a[] = new int[3][3]; ---> Valid  
   
 In Java applications, we are able to declare arrays for both primitive data types and for User defined data types also like classes, abstract classes, 
 interfaces, enums,.....
@@ -645,4 +645,10 @@ EX:
 			bank.displayCustomersNames(new String[]{"AAA", "BBB", "CCC", "DDD", "EEE"});
 		}
 	}
+	
+	AAA
+	BBB
+	CCC
+	DDD
+	EEE
 .
