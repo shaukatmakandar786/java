@@ -14,12 +14,12 @@ EX: int[] a = {10,20,30,40,50};
  
 2. Declare then Initialize
 --> In this approach, we will declare the array in one instruction and we will initialize the array in the next instructions.
-EX: int[] a = new int[5];
-	a[0] = 10;
-	a[1] = 20;
-	a[2] = 30;
-	a[3] = 40;
-	a[4] = 50;
+EX: int[] a = new int[5];  
+	a[0] = 10;  
+	a[1] = 20;  
+	a[2] = 30;  
+	a[3] = 40;  
+	a[4] = 50;  
 
 --> In Java applications, there are two types of arrays. 
 	1. Single Dimensional Arrays
@@ -38,21 +38,22 @@ Syntax: DataType[] refVar = {Val1, Val2, Val3,....Val_n};
 	    EX: int[] a = {10,20,30,40,50};
 
 2. Declare then Initialize:
-Syntax: DataType[] refVar = new DataType[Size];
-		refVar[0] = val1;
-		refVar[1] = val2;
-		refVar[2] = val3;
-		-----
-		-----
-		refVar[size-1] = val_n;
+
+Syntax: DataType[] refVar = new DataType[Size];  
+		refVar[0] = val1;  
+		refVar[1] = val2;  
+		refVar[2] = val3;  
+		-----  
+		-----  
+		refVar[size-1] = val_n;  
 		
-EX: int[] a = new int[5];
-	a[0] = 10;
-	a[1] = 20;
-	a[2] = 30;
-	a[3] = 40;
-	a[4] = 50;
-		
+EX: int[] a = new int[5];  
+	a[0] = 10;  
+	a[1] = 20;  
+	a[2] = 30;  
+	a[3] = 40;  
+	a[4] = 50;  
+		 
 
 --> In Java applications, when we pass array reference variable as parameter to System.out.println() method then JVM will access internally toString() method ,
  where All arrays are having their own toString() method internally, they are not depending on the Object class toString() method, 
@@ -77,6 +78,9 @@ EX:
 			}
 
 	}
+	
+	[I@5a07e868
+	[F@76ed5528
 
 --> In Java applications, to get length / size / no of elements of an array we have to use a predefined variable in the from of 'length'.
 EX:
@@ -94,6 +98,8 @@ EX:
 			}
 
 	}
+	5
+	6
 
 --> In Java applications, if we want to read an element from an array then we have to use the following format.
      arrayRefVar[index]
@@ -110,6 +116,10 @@ EX:
 			}
 
 	}
+	
+	20
+	40
+	50
 --> While getting elements from an array on the basis of index values, if we provide an index value which is in out side range of the array indexes
  then JVM will raise an exception like "java.lang.ArrayIndexOutOfBoundsException"  
 
@@ -146,14 +156,14 @@ EX:
 EX: int[] a = new int[]; 
      ----> Compilation Error
 	 
-EX: int[] a = new int[5];
+EX: int[] a = new int[5];  
 	--> No Compilation Error, No Exception	
 	
 	
-EX: int[] a = new int[0];
-	---> No Compilation Error, if we add an element then we will get "java.lang.ArrayIndexOutOfBoundsException".
+EX: int[] a = new int[0];  
+	---> No Compilation Error, if we add an element then we will get "java.lang.ArrayIndexOutOfBoundsException".  
  
-EX: int[] a = new int[-5];
+EX: int[] a = new int[-5];  
     ---> No Compilation Error, java.lang.NegativeArraySizeException: 
  
 --> In Declare then intialize approach, we are able to add the elements upto the max index value, that is, size-1 , if we are trying to add an element
