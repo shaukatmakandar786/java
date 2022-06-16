@@ -351,60 +351,62 @@ EX:
 	}
 
 Note: 'for-Each' loop is applicable for only retrieving elements from arrays and from Collections, 'for-Each' loop is not applicable for normal iterations, 
-where we have to use normal for loop only.
+where we have to use normal for loop only.  
 
-2. Multi Dimensional Arrays:
------------------------------
---> It able to represent all the elements in more than one Dimension or in more than one level .
+2. Multi Dimensional Arrays:  
+-----------------------------  
+--> It able to represent all the elements in more than one Dimension or in more than one level .  
 
-There are two ways to utilize multi dimensional arrays.
-1. Declare and Initialize
-2. Declare then Intialize
+There are two ways to utilize multi dimensional arrays.  
+1. Declare and Initialize  
+2. Declare then Intialize    
 
-1. Declare and Initialize:
----------------------------
-It able to declare the array and initialize the array with in single Statement.
-Syntax:
-DataType[][]...[] refVar = {{{{...},...},....},...};
-EX: int[][] a = {{1,2,3},{2,3,4},{3,4,5},{4,5,6}};
 
-2. Declare then Intialize:
---------------------------
-It able to declare the array in one instruction and Initialize the array in another instructions.
-Syntax:
-DataType[][]...[] refVar = new DataType[size_1][size_2]...[size_n];
-refVar[0][0]....[0] = val1;
-refVar[0][0]....[1] = val2;
------
------
-refVar[0][0]....[size_n-1] = val100;
------
------
-refVar[0][size_2-1]...[size_n-1] = Val1000;
-----
-----
-refVar[size_1-1][size_2-1]...[size_n-1] = val10000;
-EX:
-----
-int[][] a = new int[4][3];
-a[0][0] = 1;
-a[0][1] = 2;
-a[0][2] = 3;
+1. Declare and Initialize:  
+---------------------------  
+It able to declare the array and initialize the array with in single Statement.  
+Syntax:  
+DataType[][]...[] refVar = {{{{...},...},....},...};  
+EX: int[][] a = {{1,2,3},{2,3,4},{3,4,5},{4,5,6}};  
 
-a[1][0] = 2;
-a[1][1] = 3;
-a[1][2] = 4;
 
-a[2][0] = 3;
-a[2][1] = 4;
-a[2][2] = 5;
+2. Declare then Intialize:  
+--------------------------  
+It able to declare the array in one instruction and Initialize the array in another instructions.  
+Syntax:  
+DataType[][]...[] refVar = new DataType[size_1][size_2]...[size_n];  
+refVar[0][0]....[0] = val1;  
+refVar[0][0]....[1] = val2;  
+-----  
+-----  
+refVar[0][0]....[size_n-1] = val100;  
+-----  
+-----  
+refVar[0][size_2-1]...[size_n-1] = Val1000;  
+----  
+----  
+refVar[size_1-1][size_2-1]...[size_n-1] = val10000;  
+EX:  
+----  
+int[][] a = new int[4][3];  
+a[0][0] = 1;  
+a[0][1] = 2;  
+a[0][2] = 3;  
+ 
+a[1][0] = 2;  
+a[1][1] = 3;  
+a[1][2] = 4;  
 
-a[3][0] = 4;
-a[3][1] = 5;
-a[3][2] = 6;
+a[2][0] = 3;  
+a[2][1] = 4;  
+a[2][2] = 5;  
 
-EX:
----
+a[3][0] = 4;  
+a[3][1] = 5;  
+a[3][2] = 6;  
+
+EX:  
+---  
 
 	public class Test {
 		public static void main(String[] args) {
@@ -417,6 +419,12 @@ EX:
 		}
 	}
 
+	[[I@5a07e868
+	4
+	[I@76ed5528
+	3
+	2
+	
 If we want to read elements from an array then we have to use the following two approaches.
 
 1. By Using refVar[index1][index2]....[index_n]
@@ -526,6 +534,11 @@ EX:
 			}
 		}
 	}
+	
+	1 2 3 
+	2 3 4 
+	3 4 5 
+	4 5 6
 
 Q)Find the valid syntaxes from the following array declarations?
 -----------------------------------------------------------------
