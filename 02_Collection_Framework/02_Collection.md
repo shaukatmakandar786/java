@@ -59,11 +59,13 @@ value, if addition operation is failure then addAll() method will return "false"
             }
         }
         
-        [D,A,B,C]
-        true
-        [D,A,B,C]
+        [A, B, C, D]
         false
-        [D,A,B,C]
+        [A, B, C, D]
+        true
+        [A, B, C, D]
+        false
+        [A, B, C, D]
 
 3. public boolean remove(Object obj)  
 
