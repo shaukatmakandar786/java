@@ -256,3 +256,51 @@ EX:
 				}
 			}
 		}
+
+# Thread Lifecycle:  
+
+It is the collective information of the threads right from its starting point to ending Point.  
+
+In Java applications, Threads are having the following states as part of its lifecycle.  
+
+1. New / Born State  
+2. Ready / Runnable State  
+3. Running State  
+4. Blocked State  
+5. Dead / Destroyed State  
+
+1. New / Born State:  
+
+--> In Java applications, when we create Thread class object automatically thread will come to "New or Born State".  
+
+2. Ready / Runnable State:  
+
+In Java applications, after creatying thread, if we want to execute thread , thread required memory and execution time , to get memory and execution time we have to access start() method.  
+
+In Java applications, after accessing start() and before allocating system resources to a thread , this state is called as "Ready / Runnable State".  
+
+
+3. Running State:  
+
+In Java applications, after accessing start() and after getting system resources like memory and execution time , this state is called as "Running State".  
+
+4. Blocked State:  
+
+To keep a running thread into Blocked state  
+	a)Access sleep() method with a particular sleep time.  
+	b)Access suspend() method over running thread.  
+	c)Access wait() method over running thread.  
+	d)When we perform IO Operations.  
+
+To getback thread from Blocked State to Ready or Runnable State  
+	a)When sleep time is over.  
+	b)If any other thread access resume() method.  
+	c)If any other thread access notify() or notifyAll() methods.  
+	d)When IO Operations are completed.  
+
+Note: If we want to keep a running thread to Ready / Runnable state directly then we have to use yield() method, it is not supported in Windows Operating system, because, it required priority based manipulations, Widows OS is not supporting Priority based Manipulations.  
+ 
+5. Dead / Destroyed State:  
+
+When we access stop() method over the running thread then that thread will come to Dead state.  
+ 
