@@ -304,3 +304,200 @@ Note: If we want to keep a running thread to Ready / Runnable state directly the
 
 When we access stop() method over the running thread then that thread will come to Dead state.  
  
+## Thread class Library:
+----------------------
+## Constructors:
+
+1. public Thread()  
+--> It can be used to create Thread class object with the default values for thread name, thread priority value and thread group name.  
+
+Default Values for  
+1. Thread Name : Thread-0  
+2. Thread Priority Value : 5  
+3. Thread Group Name : main  
+
+EX:  
+
+	public class Test {
+		public static void main(String[] args) {
+			Thread t = new Thread();
+			System.out.println(t);//Thread[Thread-0,5,main]
+		}
+	}
+
+2. public Thread(String name):  
+--> It can be used to create Thread class object with the specified name.  
+Note: With the above constructor we are able to provide a particular name to the thyread, but, the priority value of the thread will be 5[Default Priority Value] and Thread Group Name will be 'main'[Default Value].  
+
+EX:  
+
+		public class Test {
+			public static void main(String[] args) {
+				Thread t = new Thread("Core Java");
+				System.out.println(t);//Thread[Core Java,5,main]
+			}
+		}
+
+3. public Thread(Runnable r):  
+--> It can be used to create Thread class object with the provided Runnable Reference.  
+Note: In this case no changes in default values of the Thread Properties.  
+Thread Name : Thread-0  
+Thread Priority Value : 5  
+Thread Group Name : main  
+
+EX:
+
+		public class Test {
+			public static void main(String[] args) {
+				Runnable r = new Thread();// Thread-0
+				System.out.println(r);//Thread[Thread-0,5,main]
+				Thread t = new Thread(r);// Thread-1
+				System.out.println(t);//Thread[Thread-1,5,main]
+			}
+		}
+
+EX:
+
+		class HelloThread implements Runnable{
+			public void run() {
+				for(int i = 0; i < 10; i++) {
+					System.out.println("HelloThread : "+i);
+				}
+			}
+		}
+		public class Test {
+			public static void main(String[] args) {
+				Runnable r = new HelloThread();
+				Thread t = new Thread(r);
+				t.start();
+				for(int i = 0; i < 10; i++) {
+					System.out.println("MainThread  : "+i);
+				}
+			}
+		}
+
+4. public Thread(Runnable r, String name)  
+--> It can be used to create thread class object with the provided Runnable reference and with the specified Thread Name.  
+Note: In this case, only Thread is changed and the remaining thread properties are having default values like Thread Priority Value is '5' and Thread Group Name is 'main'.  
+
+EX:
+
+
+	public class Test {
+		public static void main(String[] args) {
+			Runnable r = new Thread();
+			Thread t = new Thread(r,"Core Java");
+			System.out.println(t);//Thread[Core Java,5,main]
+		}
+	}
+
+EX:  
+
+
+		class HelloThread implements Runnable{
+			public void run() {
+				for(int i = 0; i < 10; i++) {
+					System.out.println("HelloThread : "+i);
+				}
+			}
+		}
+		public class Test {
+			public static void main(String[] args) {
+				Runnable r = new HelloThread();
+				Thread t = new Thread(r);
+				t.start();
+				for(int i = 0; i < 10; i++) {
+					System.out.println("MainThread  : "+i);
+				}
+			}
+		}
+
+5. public Thread(ThreadGroup tg, String name)  
+--> It can be used to create a Thread class object with the specified ThreadGroup Name and with the specified Thread Name.  
+
+Note: In Java applications, to provide a particular Thread Group Name we have to use java.lang.ThreadGroup class object.  
+	ThreadGroup threadGroup = new ThreadGroup("Group Name");  
+	
+EX:  
+
+		public class Test {
+			public static void main(String[] args) {
+				ThreadGroup threadGroup = new ThreadGroup("Java");
+				Thread t = new Thread(threadGroup,"Core Java");
+				System.out.println(t);//Thread[Core Java,5,Java] 
+			}
+		}
+
+6. public Thread(ThreadGroup tg, Runnable r)  
+--> It can be used to create Thread class object withthe specified Thread Group Name and with the specified Runnable reference.  
+Note: In this case, only ThreadGroup Name will be changed and the remaining thread properties are having default values like Thread Priority Value is '5' and thread name is 'Thread-0'.  
+
+EX:  
+
+	public class Test {
+		public static void main(String[] args) {
+			Runnable r = new Thread();
+			ThreadGroup threadGroup = new ThreadGroup("Java");
+			Thread t = new Thread(threadGroup, r);
+			System.out.println(t);//Thread[Thread-1,5,Java]
+		}
+	}
+
+EX:  
+
+
+	class WelcomeThread implements Runnable{
+		public void run() {
+			for(int i = 0; i < 10; i++) {
+				System.out.println("WelcomeThread : "+i);
+			}
+		}
+	}
+	public class Test {
+		public static void main(String[] args) {
+			Runnable r = new WelcomeThread();
+			ThreadGroup threadGroup = new ThreadGroup("Java");
+			Thread t = new Thread(threadGroup, r);
+			t.start();
+			for(int i = 0; i < 10; i++) {
+				System.out.println("MainThread    : "+i);
+			}
+		}
+	}
+
+7. public Thread(ThreadGroup tg, Runnable r, String name)  
+--> It can be used to create Thread class object with the specified ThreadGroup , Runnable reference and the provided Thread Name.  
+Note: In this case, Thread Group Name and Thread Name will be changed but Thread priority value will be the default value that is 5.  
+
+EX:
+
+	public class Test {
+		public static void main(String[] args) {
+			Runnable r = new Thread();
+			ThreadGroup threadGroup = new ThreadGroup("Java");
+			Thread t = new Thread(threadGroup,r,"Core Java");
+			System.out.println(t);//Thread[Core Java,5,Java]
+		}
+	}
+
+EX:  
+
+
+	class WelcomeThread implements Runnable{
+		public void run() {
+			for(int i = 0; i < 10; i++) {
+				System.out.println("WelcomeThread : "+i);
+			}
+		}
+	}
+	public class Test {
+		public static void main(String[] args) {
+			Runnable r = new WelcomeThread();
+			ThreadGroup threadGroup = new ThreadGroup("Java");
+			Thread t = new Thread(threadGroup,r,"Core Java");
+			t.start();
+			for(int i = 0; i < 10; i++) {
+				System.out.println("MianThread    : "+i);
+			}
+		}
+	}
