@@ -48,3 +48,30 @@ EX: Context Switching between two processes.
 EX: Context switching between two Threads.  
 --> Liht Weight Context switching will reduce application execution time.  
 --> It will increase application performance.  
+
+## Q)What is the difference between Process and Thread?
+
+Ans:  
+
+Process is flow of execution, it is heavy weight, it will take more execution time, it will reduce application performance.  
+
+Thread is flow of execution, it is light weight, it will take less execution time, it will increase application execution time.  
+  
+Note: Now a days Majority of the technologies are designed on the basis of Threads.  
+
+There are two thread models to execute applications.  
+1. Single Thread Model / Single Tasking  
+2. Multi Thread Model / Multi Tasking  
+
+1. Single Thread Model / Single Tasking:  
+--> It allows only one thread to execute the comlete application.  
+--> It follows sequential execution of the applications.  
+--> It will increase application execution time.  
+--> It will reduce application performance.  
+
+
+2. Multi Thread Model / Multi Tasking  
+--> It allows more than one thread to execute the application application.  
+--> It follows parallel execution .  
+--> It will reduce application execution time.  
+--> It will increase application performance.  
