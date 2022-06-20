@@ -74,4 +74,107 @@ There are two thread models to execute applications.
 --> It allows more than one thread to execute the application application.  
 --> It follows parallel execution .  
 --> It will reduce application execution time.  
---> It will increase application performance.  
+--> It will increase application performance. 
+
+Note: Almost all the technologies using Multi Thread Model.  
+ 
+Java is Thread Based Programming Language, it is Multi Threadded Programming Language, it follows Multi Thread Model, it allows to create and execute more than one thread at a time to execute applications.
+
+To prepare Threads, JAVA has provided predefined library in the form of java.lang package.  
+
+1. Thread  
+2. Runnable  
+
+## Q)What is Thread and in how many ways we are able to create threads in Java applications?  
+
+Ans:  
+
+Thread is flow of execution to perform a particular task.  
+As per the predefined library provided by Java, there are two ways to create threads.  
+
+1. BY Extending java.lang.Thread class  
+2. By Implementing java.lang.Runnable interface  
+
+        1. By Extending java.lang.Thread class:  
+            class MyThread extends Thread{
+                -----
+            }
+--------------------------------------------------------------------------------------------------	
+
+        2. By Implementing java.lang.Runnable interface:
+            class MyThread implements Runnable{
+                ------
+            }
+ 
+
+## Threads Design:
+---------------
+1. Approach-1: By Extending Thread class  
+2. Approach-2: By Implementing Runnable Interface  
+
+1. Approach-1: By Extending Thread class:  
+------------------------------------------
+a)Declare an User defined class.  
+b)Extend Uer defined class from java.lang.Thread class  
+c)Override Thread class run() method in user defined class.  
+
+	Note: In run() method we must provide the application logic which we want to execute by creating new thread.  
+	public void run()  
+	Note: java.lang.Runnable interface contains only one method that is run().
+    
+d)In Main class, in main() method,Create thread and execute run() method  
+  provided implementation.  
+	
+    Note: To create Thread[Flow of execution] we have to use start() method from java.lang.Thread.  
+	public void start()  
+	Note: It will create new thread[Flow of execution] and it will send that thread to run() method to execute.
+
+EX:  
+
+          
+            class WelcomeThread extends Thread{
+                public void run() {
+                    for(int i = 0; i < 10; i++) {
+                        System.out.println("WelcomeThread : "+i);
+                    }
+                }
+            }
+
+            public class Test {
+                public static void main(String[] args) {
+                    WelcomeThread welcomeThread = new WelcomeThread();
+                    welcomeThread.start();
+                    for(int i = 0; i < 10; i++) {
+                        System.out.println("Main Thread   : "+i);
+                    }
+                }
+            }
+
+## Q)In Java applications, we have already first approach[Extending Thread class] to create threads then what is the requirement to go for Second approach[Implementing Runnable Interface] of creating Threads?
+--------------------------------------------------------------------------
+Ans:  
+
+        In First Approach:
+          class MyClass extends Thread{
+          }
+
+        In GUI Appl.
+          class MyClass extends Frame{
+          }
+
+        In Java appl.
+          class MyClass extends Frame , Thread{
+          }
+
+Single sub class is extended from more than one super class directly, ity represents Multiple Inhertitance, it is not supported in Java.  
+
+If we use first approach to create threads then we must extend java.lang.Thread class to user defined class, it is not possible to extend any other classes to user defined class.  
+
+To overcome the above problem, we have to use Second Approach tocreate threads.  
+
+IN Second approach of creating threads we will implement Runnable interface instead of extending Thread class.  
+
+	class MyClass extends Frame implements Runnable{
+		-----
+	} 
+
