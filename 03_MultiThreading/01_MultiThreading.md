@@ -178,3 +178,81 @@ IN Second approach of creating threads we will implement Runnable interface inst
 		-----
 	} 
 
+
+## 2. Approach-2: By Implementing Runnable Interface
+
+a)Declare an user defined class.  
+b)Implement java.lang.Runnable interface in User defined class.  
+c)Provide implementation for run() method in User defined class .  
+   Note: Provide Application logic[Task] which we want to execute by creating new thread.  
+d)In Mian class and in main(), Create Thread and access run() method.  
+
+   
+			class MyThread implements Runnable{
+				public void run(){
+					-----Appl Logic----
+				}
+			}
+
+			class Test{
+				public static void main(String[] args){
+					Case-1:
+						MyThread mt = new MyThread();
+						mt.start();
+						Status: Compilation Error 
+					Case-2:
+						MyThread mt = new MyThread();
+						mt.run();
+						Status: Here User Thread is not created, only Main Thread is executing MyThread class run() and main() method, here no Multi Threadding.
+					Case-3:
+						MyThread mt = new MyThread();
+						Thread t = new Thread();
+						t.start();
+						Status: Here New Thread is created and it will be submitted to Thread class run() method, but not, MyThread class run() method.
+					case-4:
+						MyThread mt = new MyThread();
+						Thread t = new Thread(mt);
+						t.start();
+						Status: Valid, Here new Thread is created and it will be submitted to MyThread class run() method. 
+				}
+			}
+
+EX:  
+
+
+		class WelcomeThread implements Runnable{
+			public void run() {
+				for(int i = 0; i < 10; i++) {
+					System.out.println("Welcome Thread : "+i);
+				}
+			}
+		}
+		public class Test {
+			public static void main(String[] args) {
+				/*
+				WelcomeThread welcomeThread = new WelcomeThread();
+				welcomeThread.start();
+				*/
+				/*
+				WelcomeThread welThread = new WelcomeThread();
+				welThread.run();
+				for(int i = 0; i < 10; i++) {
+					System.out.println("Main Thread  : "+i);
+				}
+				*/
+				/*
+				WelcomeThread wt = new WelcomeThread();
+				Thread t = new Thread();
+				t.start();
+				for(int i = 0; i < 10; i++) {
+					System.out.println("Main Thread : "+i);
+				}
+				*/
+				WelcomeThread wt = new WelcomeThread();
+				Thread t = new Thread(wt);
+				t.start();
+				for(int i = 0; i < 10; i++) {
+					System.out.println("Main Thread  : "+i);
+				}
+			}
+		}
