@@ -588,3 +588,210 @@ EX:
 				t2.start();
 			}
 		}
+
+# Use Synchronization:
+
+Synchronization is a mechanism, it able to allow only one thread at a time, it unable to allow more than one thread at a time, it will allow other threads after completing the present thread execution.  
+
+In general, in Java applications, when we execute more than one thread on single data item , when we perform modifications on single data item more than one  
+thread and when one thread modifications are overridden with another thread modifications there we will get data inconsistency, but, synchronization is allowing only   one thread, there is no scope to override one thread modification with another thread modifications , there is no scope to get data inconsistency,  
+so synchronization is always providing data consistency, bydefault, all synchronized resources are Threadsafe.  
+
+Note: Bydefault, all synchronized resources are Threadsafe, but, all Threadsafe resources need not be synchronized resources, because, we are able to  
+make resource as Threadsafe resource in multiple ways like by declaring local variables over instance variables and by using immutable objects over mutable   Objects,......  
+
+In Java applications, we are able to achieve synchronization by using an access modifier in the form of "synchronized".  
+
+In Java applications, synchronization is goingon on the basis of Locking Mechanisms.  
+
+When we submit more than one thread to the synchronized area, where Lock Manager will assign lock to a particuler thread, here which thread aquire lock from Lock   Manager that thread is eligible to execute synchronized area, when a thread execution is completed in synchronized area then that thread has to submit lock back to  
+Lock manager, when Lock Manager gets Lock from a thread from synchronized area then Lock Manager will assign that lock to another thread which is in waiting state.  
+If any thread is executing synchronized area then Lock Manager will assign Lock to other threads.  
+
+In Java applications, we are able to achieve synchronization in the following two ways.  
+   
+1. Synchronized Methods  
+2. Synchronized Blocks  
+
+1. Synchronized Methods:  
+
+Synchronized Method is a normal java method with 'synchronized' keyword, it allows only one thread at a time to execute method body, it will not allow more than one   thread at a time to execute method body, after completing the execution of the present thread only other threads are allowed.  
+ 
+	synchronized void m1(){
+		------
+		-------
+	}
+	
+EX:  
+
+	class A{
+		synchronized void display() {
+			for(int i = 0; i < 10; i++) {
+				System.out.println(Thread.currentThread().getName());
+			}
+		}
+	}
+	class Thread1 extends Thread{
+		A a;
+		Thread1(A a){
+			this.a = a;
+		}
+		public void run() {
+			a.display();
+		}
+	}
+	class Thread2 extends Thread{
+		A a;
+		Thread2(A a){
+			this.a = a;
+		}
+		public void run() {
+			a.display();
+		}
+	}
+	class Thread3 extends Thread{
+		A a;
+		Thread3(A a){
+			this.a = a;
+		}
+		public void run() {
+			a.display();
+		}
+	}
+	public class Test {
+		public static void main(String[] args) {
+			A a = new A();
+
+			Thread1 t1 = new Thread1(a);
+			Thread2 t2 = new Thread2(a);
+			Thread3 t3 = new Thread3(a);
+
+			t1.setName("AAA");
+			t2.setName("BBB");
+			t3.setName("CCC");
+
+			t1.start();
+			t2.start();
+			t3.start();
+
+		}
+	}
+
+EX:  
+
+		class A{
+			synchronized void display() {
+				for(int i = 0; i < 10; i++) {
+					System.out.println(Thread.currentThread().getName());
+				}
+			}
+		}
+		class DisplayThread extends Thread{
+			A a;
+			public DisplayThread(A a) {
+				this.a = a;
+			}
+			public void run() {
+				a.display();
+			}
+		}
+		public class Test {
+			public static void main(String[] args) {
+				A a = new A();
+				DisplayThread thread1 = new DisplayThread(a);
+				DisplayThread thread2 = new DisplayThread(a);
+				DisplayThread thread3 = new DisplayThread(a);
+
+				thread1.setName("Thread-1");
+				thread2.setName("Thread-2");
+				thread3.setName("Thread-3");
+
+				thread1.start();
+				thread2.start();
+				thread3.start();
+
+			}
+		}
+
+In Java applications, synchronization allows only one thread at a time, it follows sequential execution of the threads, it will increase application execution time,  
+it will reduce application performance.  
+
+In Java applications, dont use synchronization unneccessarily, if the requirement is existed then onle use synchronization otherwise it is not suggestible to use synchronize because it will reduce application performance.  
+
+### Q)In Java applications, to achieve synchronization we have already synchronized methods approach then what is the requirement to use Synchronized blocks?  
+
+Ans:  
+
+In Java applications, to achieve synchronization if we use synchronized method then synchronization will be provided through out the method irrespective of the actual requirment. If we have requirement of synchronization upto some of the instructions inside a method and if we use synchronized method then synchronization will applied through out the method unndeccerily, it will reduce application performance.  
+
+In the above context, if we want to improve application performance, we have to provide synchronization upto the required no of instructions not through out the method, if we want to provide synchrnozation upto the required no of instructions we have to use "Synchronized Blocks".  
+   
+2. Synchronized Blocks:  
+
+It is a set of instructions, which are able to allow only one thread at a time, it will not allow more than one thread at a time, after completion of the present thread execution only other threads are allowed.  
+
+Syntax:  
+
+	synchronized(ObjectToLock){
+		-------
+		-------
+		-------
+	}
+	
+
+EX:  
+
+		class A{
+			void display() {
+				System.out.println("Before Synchronized Block : "+Thread.currentThread().getName());
+				synchronized (this) {
+					for(int i = 0; i < 10; i++) {
+						System.out.println("Inside Synchronized Block : "+Thread.currentThread().getName());
+					}
+				}
+
+			}
+		}
+		class Thread1 extends Thread{
+			A a;
+			Thread1(A a){
+				this.a = a;
+			}
+			public void run() {
+				a.display();
+			}
+		}
+		class Thread2 extends Thread{
+			A a;
+			Thread2(A a){
+				this.a = a;
+			}
+			public void run() {
+				a.display();
+			}
+		}
+		class Thread3 extends Thread{
+			A a;
+			Thread3(A a){
+				this.a = a;
+			}
+			public void run() {
+				a.display();
+			}
+		}
+		public class Test {
+			public static void main(String[] args) {
+				A a = new A();
+				Thread1 t1 = new Thread1(a);
+				Thread2 t2 = new Thread2(a);
+				Thread3 t3 = new Thread3(a);
+
+				t1.setName("AAA");
+				t2.setName("BBB");
+				t3.setName("CCC");
+
+				t1.start();
+				t2.start();
+				t3.start();
+			}
+		}
