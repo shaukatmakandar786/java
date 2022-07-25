@@ -15,5 +15,5 @@ Spring is a lightweight framework. It can be thought of as a framework of framew
 The Spring framework comprises several modules such as IOC, AOP, DAO, Context, ORM, WEB MVC etc. We will learn these modules in next page. Let's understand the IOC and Dependency Injection first.
 
 ## Inversion Of Control (IOC) and Dependency Injection:
-These are the design patterns that are used to remove dependency from the programming code. They make the code easier to test and maintain. 
+These are the design patterns that are used to remove dependency from the programming code. They make the code easier to test and maintain. ...
 Let's understand this with the following code:
