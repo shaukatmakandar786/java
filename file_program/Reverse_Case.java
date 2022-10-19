@@ -1,7 +1,7 @@
-//read data from a file convert into a reverse case and write in another file
+//read data from a file convert into a reverse case and write in another file.
 
 
-/*
+
 import java.io.*;
 class Reverse_case
 {
@@ -50,4 +50,4 @@ class Reverse_case
 		}
 	}
 }
-*/
+
