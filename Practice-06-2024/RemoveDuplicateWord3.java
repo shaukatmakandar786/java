@@ -18,9 +18,9 @@ class HelloWorld {
         for(int i=0;i<=word.length-2; i++){
             
             flag=false;
-            for(int j=0; j<=word.length-1; j++){
+            for(int j=1+i; j<=word.length-1; j++){
                 
-                if(word[i].equals(result[j])){
+                if(word[i].equals(word[j])){
                     flag=true;
                     break;
                 }
