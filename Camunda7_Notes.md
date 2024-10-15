@@ -31,3 +31,17 @@ BPMN 2.0 Engine: Camunda supports BPMN (Business Process Model and Notation), a 
 6. Highly Scalable: Camunda is designed to handle complex, high-throughput business processes, making it scalable for large enterprise use cases.
 
 Camunda is popular in various industries, including finance, insurance, and logistics, to streamline workflows and automate repetitive tasks.
+
+## BPMN Core Elements:
+
+1. Task
+2. Events
+3. Getways
+4. Sequence flow
+5. Message flow
+6. Participants(Pool & Lane)
+7. Associates
+8. Annotation
+9. Artifacts
+10. Data Object
+11. Data Group
