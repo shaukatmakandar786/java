@@ -45,3 +45,41 @@ Camunda is popular in various industries, including finance, insurance, and logi
 9. Artifacts
 10. Data Object
 11. Data Group
+
+## What is Task and Types of Task in Camunda:
+
+a Task represents a unit of work within a business process and that can be performed either by a person, a system, or an external service.
+
+1. User Task
+A User Task is a task that requires manual action by a human user. It’s typically used for approval processes, form submission, or any activity where human interaction is necessary.
+
+2. Service Task
+A Service Task is used to automate a part of the business process by invoking some backend service, like a Java class, a REST API, or any other automated system.
+
+3. Script Task
+A Script Task executes a script or piece of code to automate part of the process. The script can be written in various scripting languages like JavaScript, Groovy, or Python.
+
+4. Business Rule Task
+A Business Rule Task is used to execute decision logic using DMN (Decision Model and Notation). This allows for externalizing business rules and decision-making from the process.
+
+5. Send Task
+A Send Task is used to send a message to another process, external system, or service. It’s typically used in message-based communication between processes.
+
+6. Receive Task
+A Receive Task is a task that waits for an external message before proceeding. It’s used when the process needs to be paused until an external event occurs.
+
+7. Manual Task
+A Manual Task represents a task that is performed manually but is not managed or tracked by the workflow engine. This could be physical tasks or tasks done outside the Camunda environment.
+
+8. External Task
+An External Task is used in the External Task pattern, where the task execution is delegated to an external worker that polls for tasks from the engine. This decouples task execution from the process engine.
+
+9. Call Activity
+A Call Activity allows you to call or trigger another BPMN process within a process. It is used to modularize processes by breaking them into smaller reusable components.
+
+10. Subprocess (Expanded Task Type)
+A Subprocess groups multiple tasks within a larger process. It acts as a container to encapsulate part of the workflow logic.
+
+Types of Subprocesses:
+Embedded Subprocess: A subprocess that is part of the parent process and is expanded in the model.
+Event Subprocess: A subprocess triggered by an event.
