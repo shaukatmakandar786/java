@@ -83,3 +83,13 @@ A Subprocess groups multiple tasks within a larger process. It acts as a contain
 Types of Subprocesses:
 Embedded Subprocess: A subprocess that is part of the parent process and is expanded in the model.
 Event Subprocess: A subprocess triggered by an event.
+
+## Sequence Flow:
+
+It represents the flow of control from one element (like a task, event, or gateway) to the next, indicating the path that the process will follow.
+
+### Types of Sequnce Flow:
+
+1. Sequence Flow
+2. Conditional Flow
+3. Default Flow
