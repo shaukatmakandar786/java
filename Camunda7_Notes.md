@@ -108,3 +108,6 @@ If none of the conditions match and there is no default path it throws runtime e
 
 2. Converging Exclusive Gateway:
    Used to merge multiple incoming paths back into one. It waits for one of the paths to complete and then continues the process.
+
+### Parallel Getway:
+A Parallel Gateway in Camunda is used to execute all the path which is defined simultaniously. It does not check any condition to execute   
