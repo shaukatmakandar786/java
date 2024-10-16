@@ -127,3 +127,7 @@ An Inclusive Gateway in Camunda is used to make decisions where multiple path ca
 
 2. Converging Parallel Gateway:
    It is Used to merge multiple incoming paths back into one. It waits untill all the paths will not be complete its execution only when more than one condition is true. If only one condition is true it wont wait continues the process.
+
+## What is Subprocess Call Activity:
+
+A Subprocess Call Activity particularly in Camunda, is a way to reuse an entire process inside another process. It allows one process to call and execute a separate, reusable subprocess as part of the main workflow. This is useful for breaking down complex processes into smaller, manageable parts or for reusing common process logic across multiple workflows.
