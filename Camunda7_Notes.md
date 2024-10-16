@@ -117,3 +117,13 @@ A Parallel Gateway in Camunda is used to execute all the path which is defined s
 
 2. Converging Parallel Gateway:
    It is Used to merge multiple incoming paths back into one. It waits untill all the paths will not be complete its execution then continues the process.
+
+### Inclusive Getway:
+Its an combination of exclusive and parallel getways.
+An Inclusive Gateway in Camunda is used to make decisions where multiple path can be followed. It checks the conditions on each outgoing flow and selects the whatever is true. If none of the conditions match, it can follow a default path if defined.
+
+1. Diverging Parallel Gateway:
+   It is used to split the process flow into multiple paths, and its executes all the path which matches the condition
+
+2. Converging Parallel Gateway:
+   It is Used to merge multiple incoming paths back into one. It waits untill all the paths will not be complete its execution only when more than one condition is true. If only one condition is true it wont wait continues the process.
