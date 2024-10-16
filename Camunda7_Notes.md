@@ -93,3 +93,7 @@ It represents the flow of control from one element (like a task, event, or gatew
 1. Sequence Flow
 2. Conditional Flow
 3. Default Flow
+
+## Getway in Camunda:
+
+In Camunda, gateways are used to control the direction of a process by deciding which path to follow. They don't perform tasks themselves but simply guide the flow based on conditions or logic.
