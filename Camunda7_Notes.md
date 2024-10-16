@@ -101,4 +101,4 @@ In Camunda, gateways are used to control the direction of a process by deciding 
 ### Exclusive Getway:
 An Exclusive Gateway in Camunda is used to make decisions where only one path can be followed. It checks the conditions on each outgoing flow and selects the first one that is true. If none of the conditions match, it can follow a default path if defined.
 
-If none of the conditions match and there is no default path it throws runtime exception
+If none of the conditions match and there is no default path it throws runtime exception (Error: No outgoing sequence flow for the element with id 'Gateway_1ulvr0y' could be selected for continuing the process.)
