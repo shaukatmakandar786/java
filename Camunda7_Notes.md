@@ -135,3 +135,7 @@ A Subprocess Call Activity particularly in Camunda, is a way to reuse an entire 
 To integrate subprocess into main workflow we have to add subprocess id to the called element in the call activity task
 
 we can use variables and object of one process to another process using In Mappings and out Mappings in call Activity
+
+## Embedded Subprocess:
+
+An Embedded Subprocess in Camunda is a way to group tasks within the same process for better organization. Unlike a Call Activity, it is part of the main process and cannot be reused in other processes.
