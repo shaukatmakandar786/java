@@ -97,3 +97,8 @@ It represents the flow of control from one element (like a task, event, or gatew
 ## Getway in Camunda:
 
 In Camunda, gateways are used to control the direction of a process by deciding which path to follow. They don't perform tasks themselves but simply guide the flow based on conditions or logic.
+
+### Exclusive Getway:
+An Exclusive Gateway in Camunda is used to make decisions where only one path can be followed. It checks the conditions on each outgoing flow and selects the first one that is true. If none of the conditions match, it can follow a default path if defined.
+
+If none of the conditions match and there is no default path it throws runtime exception
