@@ -131,3 +131,7 @@ An Inclusive Gateway in Camunda is used to make decisions where multiple path ca
 ## What is Subprocess Call Activity:
 
 A Subprocess Call Activity particularly in Camunda, is a way to reuse an entire process inside another process. It allows one process to call and execute a separate, reusable subprocess as part of the main workflow. This is useful for breaking down complex processes into smaller, manageable parts or for reusing common process logic across multiple workflows.
+
+To integrate subprocess into main workflow we have to add subprocess id to the called element in the call activity task
+
+we can use variables and object of one process to another process using In Mappings and out Mappings in call Activity
