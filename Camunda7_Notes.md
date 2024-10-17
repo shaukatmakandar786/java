@@ -150,3 +150,18 @@ An Embedded Subprocess in Camunda is a way to group tasks within the same proces
 5. Collect
 6. Priority
 7. Output Order
+
+### Unique:
+Only one rule should match int the given rule. If more than one rule matches, it will raise an error.
+### Any
+Multiple rules can match, but all the rules must return the same result. If they return different results, it will cause an error.
+### First
+Multiple rules can match, but the first matching rule is applied, based on the order of rules in the table
+### Rule Order
+All matching rules are executed in the order they appear in the table, and all results are returned.
+### Collect
+All matching rules are executed, and the results are collected. You can specify aggregation functions like SUM, MIN, MAX, COUNT.
+### Priority
+If multiple rules match, the rule with the highest priority output (as defined in the table) is selected.
+### Output Order
+All matching rules are executed, and the results are returned based on a predefined order of output.
