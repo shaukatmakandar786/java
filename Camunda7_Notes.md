@@ -143,6 +143,12 @@ An Embedded Subprocess in Camunda is a way to group tasks within the same proces
 ## DMN 
 (Decision Model and Notation) is a standard for modeling and automating business decisions. In Camunda, DMN lets you define business rules, like decision tables, separately from workflows. This makes it easy to manage, automate, and update decisions without changing your code. For example, you can use DMN to check if a loan applicant is eligible based on their age and income, and Camunda will automatically apply those rules during process execution.
 
+To integrate DMN table to Business Rule task we add DMN id to Business Rule Decision_reference in the implementation section and also we select type as DMN in the same section.
+
+In Business Rule implementation section we have Map decision result drop down there we can select what type of value we will be getting from DMN and we can store it in Result Variable. Map decision result drop down is having SingleEntry, SingleResult, ResultList etc.
+
+In DMN table we can add Expression, Expression Language, type, Input variable, Output name, type
+
 1. Unique
 2. Any
 3. First
