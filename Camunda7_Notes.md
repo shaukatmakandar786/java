@@ -139,3 +139,14 @@ we can use variables and object of one process to another process using In Mappi
 ## Embedded Subprocess:
 
 An Embedded Subprocess in Camunda is a way to group tasks within the same process for better organization. Unlike a Call Activity, it is part of the main process and cannot be reused in other processes.
+
+## DMN 
+(Decision Model and Notation) is a standard for modeling and automating business decisions. In Camunda, DMN lets you define business rules, like decision tables, separately from workflows. This makes it easy to manage, automate, and update decisions without changing your code. For example, you can use DMN to check if a loan applicant is eligible based on their age and income, and Camunda will automatically apply those rules during process execution.
+
+1. Unique
+2. Any
+3. First
+4. Rule Order
+5. Collect
+6. Priority
+7. Output Order
