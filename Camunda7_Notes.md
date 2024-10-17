@@ -160,7 +160,7 @@ Multiple rules can match, but the first matching rule is applied, based on the o
 ### Rule Order
 All matching rules are executed in the order they appear in the table, and all results are returned.
 ### Collect
-All matching rules are executed, and the results are collected. You can specify aggregation functions like SUM, MIN, MAX, COUNT.
+All matching rules are executed and order they appear in the table does not considered, and the results are collected. You can specify aggregation functions like SUM, MIN, MAX, COUNT.
 ### Priority
 If multiple rules match, the rule with the highest priority output (as defined in the table) is selected.
 ### Output Order
