@@ -32,6 +32,23 @@ BPMN 2.0 Engine: Camunda supports BPMN (Business Process Model and Notation), a 
 
 Camunda is popular in various industries, including finance, insurance, and logistics, to streamline workflows and automate repetitive tasks.
 
+## History Time To Live(TTL) in application.yaml
+
+With the recent version of Camunda Framework, it has now become mandatory to specify History Time To Live(TTL).
+We already know that the Process Engine stores the information of all Process Instances, variables etc in the database.
+History Time To Live (TTL) defines how long this historic data shall remain in the database before it is cleaned up.
+We can specify TTL in application.yaml by adding following property:
+
+      camunda:
+   
+        bpm:
+      
+          generic-properties:
+      
+            properties:
+      
+              historyTimeToLive: 5
+
 ## BPMN Core Elements:
 
 1. Task
