@@ -171,3 +171,28 @@ All matching rules are executed and order they appear in the table does not cons
 If multiple rules match, the rule with the highest priority output (as defined in the table) is selected.
 ### Output Order
 All matching rules are executed, and the results are returned based on a predefined order of output.
+
+## Multi-Instance:
+
+In Camunda, multi-instance is a feature that allows a BPMN activity (such as a task, subprocess, or call activity) to be executed multiple times, either in parallel or sequentially. It is particularly useful when you need to process a collection of items (e.g., a list of orders, a group of users, or any repetitive task) within a workflow.
+
+### Key Concepts of Multi-Instance in Camunda:
+
+#### Sequential vs Parallel Execution:
+
+1. Sequential: The activity is executed multiple times, but one after another. The process will wait for each instance to complete before starting the next.
+2. Parallel: Multiple instances of the activity are executed simultaneously, and the process will wait for all of them to complete before proceeding.
+
+#### Collection:
+
+The multi-instance activity is typically tied to a collection (e.g., a list of items or a number of repetitions). This collection is a process variable, such as a list of objects, that the process iterates over.
+Each instance of the activity will be executed for a separate element in the collection.
+
+#### Element Variable:
+
+For each iteration of the multi-instance activity, you can define an element variable that will hold the value of the current element from the collection. This allows you to work with the individual item during that specific instance of the activity.
+
+#### Completion Condition:
+
+You can define a completion condition to stop the execution of further instances before all iterations have been completed. This is helpful if, for example, a condition is met halfway through, and you no longer need to continue the remaining instances.
+
