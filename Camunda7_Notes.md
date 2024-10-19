@@ -231,3 +231,16 @@ Make the process wait for something to happen (like receiving a message or waiti
 2. In intermediate event we are having (Boundry Event and Non-Boundry Event)
 3. Boundry Event can have (interrupted Event and Non Interrupted Event)
 4. Non-Boundry Event can have (throw event and catch event)
+
+### Events:
+
+1. start Event
+2. end event
+3. terminated end event
+4. timer event
+5. conditional event
+6. Message event
+7. link event
+8. Error event
+9. Esclation event
+10. signal event
