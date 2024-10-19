@@ -244,3 +244,12 @@ Make the process wait for something to happen (like receiving a message or waiti
 8. Error event
 9. Esclation event
 10. signal event
+
+## Listeners:
+
+In Camunda, Listeners let you run specific actions when certain events happen during a process. They allow you to add custom behavior to tasks or other process steps, like sending notifications or updating data when a task starts, finishes, or is assigned to someone.
+
+### Types of Listeners:
+
+1. Task Listener: Runs actions when events happen in user tasks (e.g., when a task is created, assigned, or completed).
+2. Execution Listener: Runs actions during the execution of process elements (e.g., when a process starts, ends, or transitions).
