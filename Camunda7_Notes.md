@@ -219,3 +219,15 @@ For each iteration of the multi-instance activity, you can define an element var
 
 You can define a completion condition to stop the execution of further instances before all iterations have been completed. This is helpful if, for example, a condition is met halfway through, and you no longer need to continue the remaining instances.
 
+
+## Event In Camunda:
+
+In Camunda BPM, Events are things that happen during a process, like when it starts, moves forward, or finishes. Events can either:
+
+Trigger actions (like starting or stopping the process), or
+Make the process wait for something to happen (like receiving a message or waiting for a timer).
+
+1. We have different types of event in camunda like start, intermediate, end
+2. In intermediate event we are having (Boundry Event and Non-Boundry Event)
+3. Boundry Event can have (interrupted Event and Non Interrupted Event)
+4. Non-Boundry Event can have (throw event and catch event)
