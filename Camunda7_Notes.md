@@ -251,5 +251,5 @@ In Camunda, Listeners let you run specific actions when certain events happen du
 
 ### Types of Listeners:
 
-1. Task Listener: Runs actions when events happen in user tasks (e.g., when a task is created, assigned, or completed).
-2. Execution Listener: Runs actions during the execution of process elements (e.g., when a process starts, ends, or transitions).
+1. Task Listener: Runs actions when events happen in user tasks (e.g., when a task is created, assigned, or completed). In Task Listener we are having Event Type (create, aasingment, complete, delete, update, timeout) and Listener type (Java class, Delegate Expression, expression, Script)
+2. Execution Listener: Runs actions during the execution of process elements (e.g., when a process starts, ends, or transitions). In Execution Listener we are having Event Type (start, end) and Listener type (Java class, Delegate Expression, expression, Script)
