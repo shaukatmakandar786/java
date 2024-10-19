@@ -145,6 +145,12 @@ An Inclusive Gateway in Camunda is used to make decisions where multiple path ca
 2. Converging Parallel Gateway:
    It is Used to merge multiple incoming paths back into one. It waits untill all the paths will not be complete its execution only when more than one condition is true. If only one condition is true it wont wait continues the process.
 
+### Event-Based Getway:
+
+In Camunda BPM, an Event-Based Gateway is used to model scenarios where the process flow branches out based on which event occurs first. It allows the process to wait for one or more possible events and proceed with the one that happens first.
+
+In sequence flow After Event-Based based getway we can have only events like timer or conditional event, which will execute first it goes to that path. Mean it will works with event only.
+
 ## What is Subprocess Call Activity:
 
 A Subprocess Call Activity particularly in Camunda, is a way to reuse an entire process inside another process. It allows one process to call and execute a separate, reusable subprocess as part of the main workflow. This is useful for breaking down complex processes into smaller, manageable parts or for reusing common process logic across multiple workflows.
