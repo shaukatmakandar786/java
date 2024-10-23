@@ -263,3 +263,62 @@ In Camunda, Listeners let you run specific actions when certain events happen du
 5. Camunda7 uses REST api to talk to the engine whereas camunda8 uses GRPC protocol.
 6. Camunda7 mostly used for monolith application whereas camunda8 is mostly used for microservices application.
 7. Execution listeners are not available in camunda8.
+
+## External Task
+
+An External Task in Camunda is a way to delegate certain tasks in a business process to be handled by an external service or system, rather than executing them directly inside the Camunda engine.
+
+### Key Points:
+External Service Execution: Instead of executing the task inside the workflow engine (e.g., calling a Java class or script), an External Task is designed to be handled by an external worker (which could be a microservice, another application, etc.).
+
+Worker Fetches the Task: The external worker (which could be any service or application) subscribes to a task topic (e.g., "process-payment" or "send-email"). The worker regularly fetches tasks from the engine by polling for new tasks in the topic it's interested in.
+
+Task Locking: Once a task is fetched by a worker, it's locked to prevent other workers from picking it up. The worker processes the task, does the required work, and then reports back to the Camunda engine.
+
+Complete or Fail: After the external worker finishes the task, it either:
+
+Completes the task and returns data to Camunda, signaling that the task is done.
+Reports an error or failure if something goes wrong, and Camunda can handle retries or escalation.
+
+### How Polling works in Camunda:
+Short polling: The client sends repeated requests every few seconds, asking, "Do you have a task for me?" If no tasks are available, it keeps sending requests.
+
+Long polling: The client sends a request like, "Let me know if you have any tasks in the next 10 seconds." The server waits to respond. If a task becomes available, the client is notified right away. If no task is found, the server replies after the timeout, and the client sends another request.
+
+      <dependency>
+		<groupId>org.camunda.bpm.springboot</groupId>
+		<artifactId>camunda-bpm-spring-boot-starter-external-task-client</artifactId>
+	</dependency>
+      -------------------------------------------------------------------------------------------------
+      
+       @Configuration
+      public class ExternalTaskClientConfig {
+      
+      	
+      	@Bean
+          public ExternalTaskClient externalTaskClient() {
+              return ExternalTaskClient.create()
+                  .baseUrl("http://localhost:8080/engine-rest")  // Replace with your Camunda engine URL
+                  .asyncResponseTimeout(10000)  // Timeout for long-polling
+                  .build();
+          }
+      	
+      }
+      ----------------------------------------------------------------------------------------------------------
+
+      @Component
+      @ExternalTaskSubscription("SendNotification")
+      public class ExternalTaskExample implements ExternalTaskHandler{
+      
+      	 @Autowired
+      	 private ExternalTaskClient externalTaskClient;
+      	
+      	@Override
+      	public void execute(ExternalTask externalTask, ExternalTaskService externalTaskService) {
+      		// TODO Auto-generated method stub
+      		
+      		System.out.println("Leave Approved......");
+      		externalTaskService.complete(externalTask);
+      	}
+      
+      }
