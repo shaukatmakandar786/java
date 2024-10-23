@@ -253,3 +253,12 @@ In Camunda, Listeners let you run specific actions when certain events happen du
 
 1. Task Listener: Runs actions when events happen in user tasks (e.g., when a task is created, assigned, or completed). In Task Listener we are having Event Type (create, aasingment, complete, delete, update, timeout) and Listener type (Java class, Delegate Expression, expression, Script)
 2. Execution Listener: Runs actions during the execution of process elements (e.g., when a process starts, ends, or transitions). In Execution Listener we are having Event Type (start, end) and Listener type (Java class, Delegate Expression, expression, Script)
+
+## Difference between Camunda7 and Camunda8:
+
+1. Camunda7 works based on Activity engine.
+2. Camunda8 works based on Zeebe engine which is self dveloped and Zeebe Scalable hosizontally lineraly because of elastic search based backend instead of dbms.
+3. Camunda7 has shared engine, embeded engine and romte engine, where Camunda8 only has remote engine.
+4. taskm processing in camunda is always asynchronous where as in camunda7 it can be synchronous.
+5. Camunda7 uses REST api to talk to the engine whereas camunda8 uses GRPC protocol.
+6. Execution listeners are not available in camunda8.
