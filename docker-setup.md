@@ -110,4 +110,6 @@ First go to the location where u have created docker-compose.yml file for exampl
 
 microservices/accounts: docker-compose up -d
 microservices/accounts: docker ps // to check all container are in ruuning mode or not
+
+some imp commands of docker-compose: docker-compose up -d, docker-compose down, docker-compose start, docker-compose stop
 ```
