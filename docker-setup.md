@@ -92,3 +92,12 @@ microservices/loans: docker images
 microservices/loans: docker run -d -p 9000:9000 shaukatmakandar786/loans:s4
 microservices/loans: docker ps -a
 ```
+
+## Setup to Download Docker-Compose
+
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.19.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
+```
