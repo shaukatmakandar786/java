@@ -108,6 +108,6 @@ docker-compose --version
 
 First go to the location where u have created docker-compose.yml file for example we have create the this file in accounts folder
 
-microservices/accounts: docker compose up -d
+microservices/accounts: docker-compose up -d
 microservices/accounts: docker ps // to check all container are in ruuning mode or not
 ```
