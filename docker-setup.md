@@ -61,3 +61,34 @@ sudo yum install maven
 ```
 mvn -v
 ```
+
+## Steps to run docker container
+
+```
+git clone <repo-url>
+ls -l
+//lets assume we got a repo with name microservices and this repo having 3 spring boot project like accounts, loans, cards
+cd microservices
+microservices:cd accounts
+microservices/accounts: mvn clean install
+//assume that already have dockerFile
+microservices/accounts: docker build -t shaukatmakandar786/accounts:s4 .
+microservices/accounts: docker images
+microservices/accounts: docker run -d -p 8080:8080 shaukatmakandar786/accounts:s4
+microservices/accounts: docker ps -a
+
+---------------------------------------------------------------------------------
+//assume that we are not having docker file so we are using google jib to create docker file. with this below mvn command it will create dockerFile as well as it will do build process
+microservices/cards: mvn compile jib:dockerBuild
+microservices/cards: docker images
+microservices/cards: docker run -d -p 9000:9000 shaukatmakandar786/cards:s4
+microservices/cards: docker ps -a
+
+-----------------------------------------------------------------------------------
+
+//assume that we are not having docker file so we are using google jib to create docker file. with this below mvn command it will create dockerFile as well as it will do build process
+microservices/loans: mvn compile jib:dockerBuild
+microservices/loans: docker images
+microservices/loans: docker run -d -p 9000:9000 shaukatmakandar786/loans:s4
+microservices/loans: docker ps -a
+```
