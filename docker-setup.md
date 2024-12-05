@@ -3,6 +3,15 @@
 1) Login into AWS Cloud account
 2) Create Linux VM and connect to it using MobaXterm
 
+## Execute Linux command to check VM is working fine
+
+```
+whoami
+date
+ls -l
+clear
+```
+
 ## Install Docker In Amazon Linux VM
 
 ```
@@ -25,4 +34,30 @@ exit
 
 ```
 docker -v
+docker info
+clear
+```
+
+## Install Git
+
+```
+sudo yum install git
+```
+
+## Verify git installation
+
+```
+git -v
+```
+
+## Install Maven
+
+```
+sudo yum install maven
+```
+
+## Verify git installation
+
+```
+mvn -v
 ```
