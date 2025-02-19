@@ -10,7 +10,7 @@ public class Singleton {
     
     // Step 3: Public static method that returns the instance of the class.
     public static Singleton getInstance() {
-        if (instance == null) {
+        if (instance != null) {
             // synchronized block to remove overhead
             synchronized (Singleton.class) {
                 if (instance == null) {
